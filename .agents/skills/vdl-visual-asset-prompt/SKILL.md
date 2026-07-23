@@ -1,6 +1,6 @@
 ---
 name: vdl-visual-asset-prompt
-description: Use in the Vibe Design Lab repo when turning vague visual intent into a restrained generation-ready prompt spec for images, illustrations, heroes, thumbnails, diagrams, 3D objects, abstract backgrounds, icons, menu illustration series, or "/visual-asset" style requests. Start from the canonical Claude visual-asset-prompt source, lock an Asset Template first, FORMAT as ratio, composition, background, object scale, crop, margins, and asset type, then choose 1 to 2 LOOK keywords, and keep SUBJECT as the only variable for series. Target the Codex built-in image model (gpt-image 2.0 / latest), preserve user constraints, run independent steps in parallel, run the deterministic derive engine for negatives, and route to the appropriate VDL generation or implementation skill. Do not directly generate images mid-spec from this skill.
+description: Use to turn vague visual intent into a generation-ready prompt spec for images, illustrations, heroes, thumbnails, diagrams, 3D objects, backgrounds, icons, or series. Triggers: 이런 느낌 이미지 만들어줘, 비주얼 프롬프트 짜줘, 메뉴 일러스트 시리즈, /visual-asset. Locks FORMAT first, then LOOK, keeping SUBJECT as the only variable. Produces a spec only, then hands off to a generation skill.
 ---
 
 # VDL Visual Asset Prompt

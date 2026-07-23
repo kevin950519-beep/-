@@ -5,7 +5,7 @@
  * 직접 수정하지 마세요. 수정이 필요하면 스크립트를 수정하세요.
  *
  * 생성: pnpm generate-rules
- * 생성일: 2026-07-07
+ * 생성일: 2026-07-23
  */
 
 export const priorityMeta = {
@@ -54,6 +54,13 @@ export const ruleNodes = [
     "priority": "CRITICAL",
     "path": ".claude/rules/mui-grid-usage.md",
     "description": "```jsx"
+  },
+  {
+    "id": "no-em-dash",
+    "name": "no-em-dash.md",
+    "priority": "MUST",
+    "path": ".claude/rules/no-em-dash.md",
+    "description": "em dash 문자(U+2014, `—`)를 어떤 산출물에도 쓰지 않는다."
   },
   {
     "id": "component-work",
@@ -291,70 +298,70 @@ export const ruleNodes = [
     "name": "vdl-component-work (Codex Skill)",
     "priority": "Codex Skill",
     "path": ".agents/skills/vdl-component-work/SKILL.md",
-    "description": "ALWAYS use in the Vibe Design Lab repo when files under src/components/ are created, modified, deleted, or refactored, or when any story file (.stories.jsx) is touched. Do not edit component or story files directly. Use this skill first. Also trigger when the user mentions making, editing, removing, or improving components or stories (\"컴포넌트 만들어줘\", \"수정해줘\", \"삭제해줘\", \"스토리 작성\", \"argTypes 추가\"). Manages component taxonomy, design tokens, and interactive patterns for the MUI-based design system. Start from the canonical Claude component-work source, reference its taxonomy and resources instead of duplicating them, keep design-token discipline, and hand off combination-unit outputs to the audit agents only after asking the user."
+    "description": "ALWAYS use before any work on src/components/** or *.stories.jsx: create, modify, delete, refactor, document. Never edit component or story files directly. Korean triggers: 컴포넌트 만들어줘, 수정해줘, 삭제해줘, 스토리 작성, argTypes 추가. Manages component taxonomy, design tokens, and interactive patterns for this MUI design system."
   },
   {
     "id": "codex-skill--vdl-convert-external",
     "name": "vdl-convert-external (Codex Skill)",
     "priority": "Codex Skill",
     "path": ".agents/skills/vdl-convert-external/SKILL.md",
-    "description": "Use in the Vibe Design Lab repo when the user pastes external component code, references src/externalComponents/, or asks to convert, adapt, or migrate outside code to match project conventions. Converts external code (TypeScript, Tailwind, styled-components, default exports) into project-compliant MUI sx-based JSX components, removing types, migrating styles to the sx prop, externalizing outside imports into props or theme tokens, classifying the component into the taxonomy, writing a Storybook story with the Placeholder system, and registering it. Korean triggers include 이거 변환해줘, 외부 컴포넌트 적용해줘, 프로젝트에 맞게 바꿔줘. Requires user approval of the conversion plan before writing code, and user confirmation before installing new dependencies or deleting the original source."
+    "description": "Use when the user pastes external component code, references src/externalComponents/, or asks to convert, adapt, or migrate outside code to project conventions. Korean triggers: 이거 변환해줘, 외부 컴포넌트 적용해줘, 프로젝트에 맞게 바꿔줘. Converts TypeScript, Tailwind, or styled-components into MUI sx-based JSX, classifies it into the taxonomy, and writes a Storybook story."
   },
   {
     "id": "codex-skill--vdl-project-planning",
     "name": "vdl-project-planning (Codex Skill)",
     "priority": "Codex Skill",
     "path": ".agents/skills/vdl-project-planning/SKILL.md",
-    "description": "Use in the Vibe Design Lab repo ONLY on explicit invocation ($vdl-project-planning or /skills) to author sequential planning documents for a new feature or project initiative. Triggers include \"기획 문서 작성해줘\", \"프로젝트 계획\", \"새 기능 기획\", \"project-summary 작성\", \"ux-flow 만들어줘\", \"visual-direction\", and \"다음 단계 진행해줘\". Produces project-summary, then ux-flow, then visual-direction under docs/{project-name}/, each behind an approval gate. Do NOT auto-activate; wait for direct user invocation. Starts from the canonical Claude project-planning source and does not duplicate its templates or workflow data."
+    "description": "EXPLICIT INVOCATION ONLY ($vdl-project-planning or /skills); never auto-activate. Authors sequential planning docs under docs/{project-name}/: project-summary, then ux-flow, then visual-direction, each behind an approval gate. Korean triggers: 기획 문서 작성해줘, 프로젝트 계획, 새 기능 기획, ux-flow 만들어줘, 다음 단계 진행해줘."
   },
   {
     "id": "codex-skill--vdl-rule-visualization",
     "name": "vdl-rule-visualization (Codex Skill)",
     "priority": "Codex Skill",
     "path": ".agents/skills/vdl-rule-visualization/SKILL.md",
-    "description": "Explicit-invocation-only. Use in the Vibe Design Lab repo when a rule or skill or subagent is added, modified, or deleted and the rule relationship graph must be resynced. Triggers on \"$vdl-rule-visualization\", \"ruleRelationships sync\", \"룰 시각화 업데이트\", \"룰/규칙 추가·수정·삭제\", \"새 스킬 만들어줘/스킬 수정\", \"룰 관계 동기화\", \"rule graph resync\", or after editing files under .claude/rules, .claude/skills, .agents/skills, or .codex/agents. Syncs src/data/ruleRelationships.js with the actual on-disk rule and skill and subagent structure and refreshes the Storybook Overview/Rule Relationships visualization. In Codex the scan surface is re-pointed to span both the .claude/ tree and the Codex .agents/ plus .codex/ tree. Do not invoke implicitly; run pnpm generate-rules for the automated sync path."
+    "description": "EXPLICIT INVOCATION ONLY; never auto-activate. Use after adding, editing, or deleting anything under .claude/rules, .claude/skills, .agents/skills, or .codex/agents to resync src/data/ruleRelationships.js and the Storybook rule graph. Korean triggers: 룰 시각화 업데이트, 룰 관계 동기화, 새 스킬 만들어줘. Prefer pnpm generate-rules for the automated path."
   },
   {
     "id": "codex-skill--vdl-skill-creator",
     "name": "vdl-skill-creator (Codex Skill)",
     "priority": "Codex Skill",
     "path": ".agents/skills/vdl-skill-creator/SKILL.md",
-    "description": "Use in the Vibe Design Lab repo to create a new Codex skill or port a Claude Code skill into a Codex skill. Trigger when the user says \"codex 스킬 만들어\", \"스킬 codex용으로 이식\", \"port this skill to codex\", \"새 codex 스킬\", \"convert .claude/skills to .agents/skills\", or wants to author/edit anything under .agents/skills. Follows the VDL thin-adapter pattern, referencing the canonical .claude source as SSOT instead of duplicating data, and writes SKILL.md plus agents/openai.yaml to the Codex standard path .agents/skills/vdl-<name>/. Reads references/porting-rules.md and references/codex-spec.md before writing."
+    "description": "Use to author a new Codex skill or port a Claude skill into .agents/skills/vdl-<name>/. Triggers: codex 스킬 만들어, 스킬 codex용으로 이식, port this skill to codex, or any edit under .agents/skills. Writes SKILL.md plus agents/openai.yaml under the thin-adapter rule: reference the .claude source as SSOT, never duplicate its data. Reads references/porting-rules.md and references/codex-spec.md first."
   },
   {
     "id": "codex-skill--vdl-stable-layout",
     "name": "vdl-stable-layout (Codex Skill)",
     "priority": "Codex Skill",
     "path": ".agents/skills/vdl-stable-layout/SKILL.md",
-    "description": "Use in the Vibe Design Lab repo when framing a stable layout skeleton for a page, section, dashboard, form, or component so that overflow, layout shift (CLS), idle gaps, and imbalance are prevented. Triggers on \"레이아웃 잡아줘\", \"이 화면 레이아웃 설계\", \"안정적인 레이아웃\", \"레이아웃이 깨진다/넘친다\", \"overflow\", \"CLS\", \"반응형 레이아웃 구성\", \"/layout\", or whenever a new screen or section skeleton is being framed. Consumes the layout taxonomy knowledge base (src/data/layoutTaxonomyData.js) and works in order: space model (fluid/fixed/hybrid) -> archetype -> region policy -> saturation -> reflow -> component mapping -> stability check. Pick patterns by bestFor and reject by avoidFor; never improvise. This skill consumes the taxonomy only; it does not extend it."
+    "description": "Use when framing the layout skeleton of a page, section, dashboard, form, or component so that overflow, CLS, idle gaps, and imbalance are prevented. Korean triggers: 레이아웃 잡아줘, 안정적인 레이아웃, 레이아웃이 깨진다, 넘친다, 반응형 레이아웃 구성. Order: space model, archetype, region policy, saturation, reflow, component mapping, stability check. Knowledge base: src/data/layoutTaxonomyData.js."
   },
   {
     "id": "codex-skill--vdl-sub-agent-generator",
     "name": "vdl-sub-agent-generator (Codex Skill)",
     "priority": "Codex Skill",
     "path": ".agents/skills/vdl-sub-agent-generator/SKILL.md",
-    "description": "Use in the Vibe Design Lab repo to create a Codex subagent as a TOML file at .codex/agents/<name>.toml, or to port a Claude Code subagent (.claude/agents/<name>.md) into that TOML format. Trigger when the user says \"codex 서브에이전트 만들어\", \"에이전트 codex용으로 이식\", \"port this agent to codex\", \"make a codex subagent\", or wants to author anything under .codex/agents. Converts markdown+YAML agent definitions into Codex TOML with developer_instructions, model, and sandbox_mode, mapping Claude tool whitelists onto sandbox_mode least-privilege. Reads reference.md before writing."
+    "description": "Use to create a Codex subagent as .codex/agents/<name>.toml, or to port a Claude subagent (.claude/agents/<name>.md) into that TOML format. Triggers: codex 서브에이전트 만들어, 에이전트 codex용으로 이식, port this agent to codex, or any edit under .codex/agents. Maps Claude tool whitelists onto sandbox_mode least-privilege. Reads reference.md before writing."
   },
   {
     "id": "codex-skill--vdl-supabase-integration",
     "name": "vdl-supabase-integration (Codex Skill)",
     "priority": "Codex Skill",
     "path": ".agents/skills/vdl-supabase-integration/SKILL.md",
-    "description": "Use in the Vibe Design Lab repo ONLY when explicitly invoked ($vdl-supabase-integration or /skills) to connect supabase, add a backend, set up auth, create a DB schema, design RLS, hide an API key, move an API call to the server, or add an edge function. Reads ux-flow's Entity ID Dictionary as the single input and produces 04-data-bridge.md plus appendix-* docs (db-schema / auth-design / rls-policies / api-integration / edge-functions), supabase migrations, and JS data hooks. Read-only on ux-flow; report implementation constraints back to the user, who updates ux-flow via project-planning. Depends on the supabase MCP server for exploration and verification, and on the Supabase CLI for state changes. Do not auto-activate."
+    "description": "EXPLICIT INVOCATION ONLY; never auto-activate. Use to connect supabase, add a backend, set up auth, design a DB schema or RLS, hide an API key, move an API call server-side, or add an edge function. Reads ux-flow Entity ID Dictionary as the single input and produces 04-data-bridge.md, appendix docs, migrations, and JS data hooks. Read-only on ux-flow. Requires the supabase MCP server."
   },
   {
     "id": "codex-skill--vdl-visual-asset-prompt",
     "name": "vdl-visual-asset-prompt (Codex Skill)",
     "priority": "Codex Skill",
     "path": ".agents/skills/vdl-visual-asset-prompt/SKILL.md",
-    "description": "Use in the Vibe Design Lab repo when turning vague visual intent into a restrained generation-ready prompt spec for images, illustrations, heroes, thumbnails, diagrams, 3D objects, abstract backgrounds, icons, menu illustration series, or \"/visual-asset\" style requests. Start from the canonical Claude visual-asset-prompt source, lock an Asset Template first, FORMAT as ratio, composition, background, object scale, crop, margins, and asset type, then choose 1 to 2 LOOK keywords, and keep SUBJECT as the only variable for series. Target the Codex built-in image model (gpt-image 2.0 / latest), preserve user constraints, run independent steps in parallel, run the deterministic derive engine for negatives, and route to the appropriate VDL generation or implementation skill. Do not directly generate images mid-spec from this skill."
+    "description": "Use to turn vague visual intent into a generation-ready prompt spec for images, illustrations, heroes, thumbnails, diagrams, 3D objects, backgrounds, icons, or series. Triggers: 이런 느낌 이미지 만들어줘, 비주얼 프롬프트 짜줘, 메뉴 일러스트 시리즈, /visual-asset. Locks FORMAT first, then LOOK, keeping SUBJECT as the only variable. Produces a spec only, then hands off to a generation skill."
   },
   {
     "id": "codex-agent--ai-slop-fixer",
     "name": "ai-slop-fixer.toml",
     "priority": "Codex Agent",
     "path": ".codex/agents/ai-slop-fixer.toml",
-    "description": "Detects AI-slop design cliches in Next.js + MUI code (purple-blue gradients, indigo-500 accents, Inter-everywhere typography, centered heros, icon-top 3-card rows, glassmorphism, gradient text, uniform rounding, AI buzzword copy, em-dash overuse) and prescribes concrete replacements by following each taxonomy entry's escape into the design, layout, and visual dictionaries. Reports by default; applies fixes only when explicitly asked. Use PROACTIVELY immediately after generating a new page, landing section, or component, and MUST BE USED when the user says \\\"AI 티 난다\\\", \\\"슬롭 점검\\\", \\\"디자인이 뻔하다/평범하다\\\", \\\"다른 AI 사이트랑 똑같다\\\", \\\"보라색/그라디언트 빼줘\\\", \\\"클리셰 잡아줘\\\", or \\\"이 화면 슬롭 고쳐\\\". Keywords: MUI sx, aiSlopTaxonomyData, design cliche, gradient, design token. Delegates standalone long-form Korean prose humanizing to humanize-korean, and general design-token QA to design-qa.\nsandbox_mode ="
+    "description": "Detects AI-slop design cliches in Next.js + MUI code (purple-blue gradients, indigo-500 accents, Inter-everywhere typography, centered heros, icon-top 3-card rows, glassmorphism, gradient text, uniform rounding, AI buzzword copy, em-dash overuse) and prescribes concrete replacements by following each taxonomy entry's escape into the design, layout, and visual dictionaries. Reports by default; applies fixes only when explicitly asked. Use PROACTIVELY immediately after generating a new page, landing section, or component, and MUST BE USED when the user says \\\"AI 티 난다\\\", \\\"슬롭 점검\\\", \\\"디자인이 뻔하다/평범하다\\\", \\\"다른 AI 사이트랑 똑같다\\\", \\\"보라색/그라디언트 빼줘\\\", \\\"클리셰 잡아줘\\\", or \\\"이 화면 슬롭 고쳐\\\". Keywords: MUI sx, aiSlopTaxonomyData, design cliche, gradient, design token. Delegates standalone long-form Korean prose humanizing to humanize-korean, and general design-token QA to design-qa.\ndeveloper_instructions ="
   },
   {
     "id": "codex-agent--design-system-auditor",
@@ -406,6 +413,11 @@ export const ruleEdges = [
   {
     "from": "claude-md",
     "to": "mui-grid-usage",
+    "type": "loads"
+  },
+  {
+    "from": "claude-md",
+    "to": "no-em-dash",
     "type": "loads"
   },
   {

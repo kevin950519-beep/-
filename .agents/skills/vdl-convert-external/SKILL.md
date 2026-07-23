@@ -1,6 +1,6 @@
 ---
 name: vdl-convert-external
-description: Use in the Vibe Design Lab repo when the user pastes external component code, references src/externalComponents/, or asks to convert, adapt, or migrate outside code to match project conventions. Converts external code (TypeScript, Tailwind, styled-components, default exports) into project-compliant MUI sx-based JSX components, removing types, migrating styles to the sx prop, externalizing outside imports into props or theme tokens, classifying the component into the taxonomy, writing a Storybook story with the Placeholder system, and registering it. Korean triggers include 이거 변환해줘, 외부 컴포넌트 적용해줘, 프로젝트에 맞게 바꿔줘. Requires user approval of the conversion plan before writing code, and user confirmation before installing new dependencies or deleting the original source.
+description: Use when the user pastes external component code, references src/externalComponents/, or asks to convert, adapt, or migrate outside code to project conventions. Korean triggers: 이거 변환해줘, 외부 컴포넌트 적용해줘, 프로젝트에 맞게 바꿔줘. Converts TypeScript, Tailwind, or styled-components into MUI sx-based JSX, classifies it into the taxonomy, and writes a Storybook story.
 ---
 
 # VDL Convert External

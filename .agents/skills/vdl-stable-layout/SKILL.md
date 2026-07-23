@@ -1,6 +1,6 @@
 ---
 name: vdl-stable-layout
-description: Use in the Vibe Design Lab repo when framing a stable layout skeleton for a page, section, dashboard, form, or component so that overflow, layout shift (CLS), idle gaps, and imbalance are prevented. Triggers on "레이아웃 잡아줘", "이 화면 레이아웃 설계", "안정적인 레이아웃", "레이아웃이 깨진다/넘친다", "overflow", "CLS", "반응형 레이아웃 구성", "/layout", or whenever a new screen or section skeleton is being framed. Consumes the layout taxonomy knowledge base (src/data/layoutTaxonomyData.js) and works in order: space model (fluid/fixed/hybrid) -> archetype -> region policy -> saturation -> reflow -> component mapping -> stability check. Pick patterns by bestFor and reject by avoidFor; never improvise. This skill consumes the taxonomy only; it does not extend it.
+description: Use when framing the layout skeleton of a page, section, dashboard, form, or component so that overflow, CLS, idle gaps, and imbalance are prevented. Korean triggers: 레이아웃 잡아줘, 안정적인 레이아웃, 레이아웃이 깨진다, 넘친다, 반응형 레이아웃 구성. Order: space model, archetype, region policy, saturation, reflow, component mapping, stability check. Knowledge base: src/data/layoutTaxonomyData.js.
 ---
 
 # VDL Stable Layout

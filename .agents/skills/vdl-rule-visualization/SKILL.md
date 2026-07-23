@@ -1,6 +1,6 @@
 ---
 name: vdl-rule-visualization
-description: Explicit-invocation-only. Use in the Vibe Design Lab repo when a rule or skill or subagent is added, modified, or deleted and the rule relationship graph must be resynced. Triggers on "$vdl-rule-visualization", "ruleRelationships sync", "룰 시각화 업데이트", "룰/규칙 추가·수정·삭제", "새 스킬 만들어줘/스킬 수정", "룰 관계 동기화", "rule graph resync", or after editing files under .claude/rules, .claude/skills, .agents/skills, or .codex/agents. Syncs src/data/ruleRelationships.js with the actual on-disk rule and skill and subagent structure and refreshes the Storybook Overview/Rule Relationships visualization. In Codex the scan surface is re-pointed to span both the .claude/ tree and the Codex .agents/ plus .codex/ tree. Do not invoke implicitly; run pnpm generate-rules for the automated sync path.
+description: EXPLICIT INVOCATION ONLY; never auto-activate. Use after adding, editing, or deleting anything under .claude/rules, .claude/skills, .agents/skills, or .codex/agents to resync src/data/ruleRelationships.js and the Storybook rule graph. Korean triggers: 룰 시각화 업데이트, 룰 관계 동기화, 새 스킬 만들어줘. Prefer pnpm generate-rules for the automated path.
 ---
 
 # VDL Rule Visualization

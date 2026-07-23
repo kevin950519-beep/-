@@ -1,6 +1,6 @@
 ---
 name: vdl-component-work
-description: ALWAYS use in the Vibe Design Lab repo when files under src/components/ are created, modified, deleted, or refactored, or when any story file (.stories.jsx) is touched. Do not edit component or story files directly. Use this skill first. Also trigger when the user mentions making, editing, removing, or improving components or stories ("컴포넌트 만들어줘", "수정해줘", "삭제해줘", "스토리 작성", "argTypes 추가"). Manages component taxonomy, design tokens, and interactive patterns for the MUI-based design system. Start from the canonical Claude component-work source, reference its taxonomy and resources instead of duplicating them, keep design-token discipline, and hand off combination-unit outputs to the audit agents only after asking the user.
+description: ALWAYS use before any work on src/components/** or *.stories.jsx: create, modify, delete, refactor, document. Never edit component or story files directly. Korean triggers: 컴포넌트 만들어줘, 수정해줘, 삭제해줘, 스토리 작성, argTypes 추가. Manages component taxonomy, design tokens, and interactive patterns for this MUI design system.
 ---
 
 # VDL Component Work

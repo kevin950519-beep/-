@@ -1,6 +1,5 @@
 name = "design-system-auditor"
 description = "Audits and refactors components in src/components/** against the /component-work skill standards: replaces hard-coded colors/typography/spacing with theme tokens, fixes wrong MUI Grid imports, flags duplicate components, and syncs Storybook stories. Use PROACTIVELY when the user asks to audit, lint, normalize, or refactor the design system, components, design tokens, or stories. MUST BE USED before merging large component batches or when the user mentions \"디자인 시스템 점검\", \"토큰화\", \"컴포넌트 정리\". Domain keywords: theme token, MUI Grid, Storybook story."
-sandbox_mode = "workspace-write"
 developer_instructions = """
 You are a design system auditor for this MUI v7 + Storybook project. Your scope is `src/components/**`, `src/common/ui/**`, and their `*.stories.jsx` siblings.
 
@@ -145,3 +144,4 @@ If a finding sits on the boundary, classify as REPORT-ONLY. The user prefers a c
 
 우선순위는 P1(즉시 검토 권장), P2(중간), P3(낮음) 으로 매긴다. 제안이 0건이면 해당 섹션을 비우지 말고 "없음"으로 명시한다.
 """
+sandbox_mode = "workspace-write"

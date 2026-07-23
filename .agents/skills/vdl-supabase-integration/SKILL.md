@@ -1,6 +1,6 @@
 ---
 name: vdl-supabase-integration
-description: Use in the Vibe Design Lab repo ONLY when explicitly invoked ($vdl-supabase-integration or /skills) to connect supabase, add a backend, set up auth, create a DB schema, design RLS, hide an API key, move an API call to the server, or add an edge function. Reads ux-flow's Entity ID Dictionary as the single input and produces 04-data-bridge.md plus appendix-* docs (db-schema / auth-design / rls-policies / api-integration / edge-functions), supabase migrations, and JS data hooks. Read-only on ux-flow; report implementation constraints back to the user, who updates ux-flow via project-planning. Depends on the supabase MCP server for exploration and verification, and on the Supabase CLI for state changes. Do not auto-activate.
+description: EXPLICIT INVOCATION ONLY; never auto-activate. Use to connect supabase, add a backend, set up auth, design a DB schema or RLS, hide an API key, move an API call server-side, or add an edge function. Reads ux-flow Entity ID Dictionary as the single input and produces 04-data-bridge.md, appendix docs, migrations, and JS data hooks. Read-only on ux-flow. Requires the supabase MCP server.
 ---
 
 # VDL Supabase Integration

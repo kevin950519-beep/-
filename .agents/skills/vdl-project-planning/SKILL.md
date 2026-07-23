@@ -1,6 +1,6 @@
 ---
 name: vdl-project-planning
-description: Use in the Vibe Design Lab repo ONLY on explicit invocation ($vdl-project-planning or /skills) to author sequential planning documents for a new feature or project initiative. Triggers include "기획 문서 작성해줘", "프로젝트 계획", "새 기능 기획", "project-summary 작성", "ux-flow 만들어줘", "visual-direction", and "다음 단계 진행해줘". Produces project-summary, then ux-flow, then visual-direction under docs/{project-name}/, each behind an approval gate. Do NOT auto-activate; wait for direct user invocation. Starts from the canonical Claude project-planning source and does not duplicate its templates or workflow data.
+description: EXPLICIT INVOCATION ONLY ($vdl-project-planning or /skills); never auto-activate. Authors sequential planning docs under docs/{project-name}/: project-summary, then ux-flow, then visual-direction, each behind an approval gate. Korean triggers: 기획 문서 작성해줘, 프로젝트 계획, 새 기능 기획, ux-flow 만들어줘, 다음 단계 진행해줘.
 ---
 
 # VDL Project Planning

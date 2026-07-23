@@ -1,6 +1,6 @@
 ---
 name: vdl-sub-agent-generator
-description: Use in the Vibe Design Lab repo to create a Codex subagent as a TOML file at .codex/agents/<name>.toml, or to port a Claude Code subagent (.claude/agents/<name>.md) into that TOML format. Trigger when the user says "codex 서브에이전트 만들어", "에이전트 codex용으로 이식", "port this agent to codex", "make a codex subagent", or wants to author anything under .codex/agents. Converts markdown+YAML agent definitions into Codex TOML with developer_instructions, model, and sandbox_mode, mapping Claude tool whitelists onto sandbox_mode least-privilege. Reads reference.md before writing.
+description: Use to create a Codex subagent as .codex/agents/<name>.toml, or to port a Claude subagent (.claude/agents/<name>.md) into that TOML format. Triggers: codex 서브에이전트 만들어, 에이전트 codex용으로 이식, port this agent to codex, or any edit under .codex/agents. Maps Claude tool whitelists onto sandbox_mode least-privilege. Reads reference.md before writing.
 ---
 
 # VDL Subagent Generator (Codex)

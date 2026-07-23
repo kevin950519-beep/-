@@ -1,6 +1,6 @@
 ---
 name: vdl-skill-creator
-description: Use in the Vibe Design Lab repo to create a new Codex skill or port a Claude Code skill into a Codex skill. Trigger when the user says "codex 스킬 만들어", "스킬 codex용으로 이식", "port this skill to codex", "새 codex 스킬", "convert .claude/skills to .agents/skills", or wants to author/edit anything under .agents/skills. Follows the VDL thin-adapter pattern, referencing the canonical .claude source as SSOT instead of duplicating data, and writes SKILL.md plus agents/openai.yaml to the Codex standard path .agents/skills/vdl-<name>/. Reads references/porting-rules.md and references/codex-spec.md before writing.
+description: Use to author a new Codex skill or port a Claude skill into .agents/skills/vdl-<name>/. Triggers: codex 스킬 만들어, 스킬 codex용으로 이식, port this skill to codex, or any edit under .agents/skills. Writes SKILL.md plus agents/openai.yaml under the thin-adapter rule: reference the .claude source as SSOT, never duplicate its data. Reads references/porting-rules.md and references/codex-spec.md first.
 ---
 
 # VDL Skill Creator (Codex)

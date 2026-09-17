@@ -60,6 +60,8 @@ node .claude/skills/visual-asset-prompt/scripts/detect-env.mjs
 
 사용자 의도에서 **FORMAT 필드**와 **SUBJECT** 를 정한다. 부족한 것만 1~2개 질문(적응형). 사용자가 명시한 필드는 **잠근다**(규칙 1).
 
+프로젝트에 `docs/{project}/03-visual-direction.md`가 있고 `§4 이미지·에셋 방향` 표가 채워져 있으면, 해당 에셋 유형 행의 FORMAT / LOOK / SUBJECT / 하지 않는 것을 기본값으로 읽는다. 사용자 명시값이 있으면 그것이 우선한다(규칙 1).
+
 | FORMAT 필드 | 결정 |
 |---|---|
 | 에셋 타입 | 단일 오브젝트(고립) / 장면 / 패턴 / 다이어그램 |

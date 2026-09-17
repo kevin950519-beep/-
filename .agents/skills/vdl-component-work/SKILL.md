@@ -19,7 +19,7 @@ Read the source first, then load resources on demand by phase. Paths are the ori
 - Read `.claude/skills/component-work/resources/storybook-writing.md` whenever you write or sync a `.stories.jsx` file.
 - Read `.claude/skills/component-work/resources/interactive-principles.md` when the work uses an animation library (Framer Motion, GSAP), scroll-based interaction, taxonomy categories #11 to #15, or interaction beyond plain CSS animation.
 - Read `.claude/skills/component-work/resources/typography-criteria.md` only when text is the primary content (article, longform, hero copy, form labels, table or numeric columns), or the user mentions readability, line length, leading, Korean setting, or font size.
-- Read `.claude/skills/component-work/resources/mui-theme.md` when editing theme or styles, and `refactoring-guide.md` when refactoring, and `project-summary.md` for onboarding or context.
+- Read `.claude/skills/component-work/resources/mui-theme.md` when editing theme or styles, and `refactoring-guide.md` when refactoring, and `starterkit-overview.md` (formerly project-summary.md) for onboarding or context.
 - Inspect `src/data/*TaxonomyData.js` (design, layout, typography, ai-slop, visual-asset) only for the specific design-criterion detail you need; this is the shared origin the audit agents also use.
 
 If the Claude source folder is missing, stop and tell the user this Codex skill depends on that local source path (`.claude/skills/component-work/`).

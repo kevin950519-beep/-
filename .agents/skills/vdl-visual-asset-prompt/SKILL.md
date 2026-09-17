@@ -24,6 +24,7 @@ Run independent work in parallel. Whenever steps do not depend on each other's r
 ## Required Reads
 
 - Read `.claude/skills/visual-asset-prompt/SKILL.md` for the full source workflow.
+- If the project has `docs/{project}/03-visual-direction.md` with a filled §4 image/asset direction table, read the matching asset-type row (FORMAT / LOOK / SUBJECT / exclusions) as defaults. Explicit user values still win.
 - Read `.claude/skills/visual-asset-prompt/references/model-profiles.md` before writing the final positive prompt. Use Profile B (GPT image) only. Ignore Profile A (Nano Banana); this Codex skill does not target Nano Banana.
 - Read `.claude/skills/visual-asset-prompt/references/index.md` before choosing taxonomy keywords.
 - Read `.claude/skills/visual-asset-prompt/references/intent-frame.md` when mapping vague intent into the 7-axis frame.

@@ -23,7 +23,7 @@ This skill is explicit-invocation only. Do not auto-activate. Run it only when t
 Read these from the Claude source when the relevant phase needs them. Do not copy their contents into this adapter.
 
 - `.claude/skills/supabase-integration/SKILL.md` - the full phase-by-phase workflow, activation table, absolute rules, and Phase entry format. Read first.
-- `docs/{project}/02-ux-flow.md § 데이터 모델 활용` - the Entity ID Dictionary. This is the single input. Read-only. Also Read its `§ 페이지 리스트`, `§ UX-flow`, and `§ 컴포넌트 리스트`, plus `docs/{project}/appendix-screen-component-map.md`, for Phase 0.5.
+- `docs/{project}/02-ux-flow.md § 데이터 모델 활용` - the Entity ID Dictionary. This is the single input. Read-only. Also Read its `§ 페이지 리스트`, `§ UX-flow`, and `§ 컴포넌트 리스트` (one table holding 재활용/수정/신규; there is no separate appendix-screen-component-map file), for Phase 0.5.
 - `.claude/skills/supabase-integration/resources/mcp-cli-playbook.md` - MCP/CLI role split. All phases.
 - `.claude/skills/supabase-integration/resources/doc-templates.md` - data-bridge + 5 appendix templates. Each doc-authoring step.
 - `.claude/skills/supabase-integration/resources/schema-patterns.md` and `trigger-patterns.md` - Phase 1 (and triggers for Phase 2).

@@ -118,9 +118,9 @@ Prereq Check  →   Data Bridge              →    Schema → Auth → RLS → 
 1. **입력 문서 존재 + 2 컴포넌트 완전성**
    - `docs/{project}/02-ux-flow.md` 존재
    - § 데이터 모델 안에 다음 2 컴포넌트 모두 존재:
-     - 데이터 모델 카드 (1개 이상)
+     - 대상 정의 표 (1행 이상)
      - **데이터 모델 활용** (필수)
-   - § UX-flow 단계별 서사 존재
+   - § UX-flow 시나리오 (단계 표) 존재
    - § 페이지 리스트 존재
    - 사전의 "예상 테이블명" 칸이 모두 채워져 있는지 (미정 = 차단)
    - **SQL 예약어 충돌 검증**: `.claude/skills/project-planning/resources/sql-reserved-words.md` Read. 사전의 "예상 테이블명" 컬럼이 PG 예약어 또는 흔한 충돌 단어 (`references`, `user`, `order`, `group` 등) 와 일치하면 차단 + 사용자에게 ux-flow 갱신 요청. Supabase 예약 스키마 (`auth.*` / `storage.*` / `realtime.*`) 는 `auth.users` 만 허용.
@@ -164,7 +164,7 @@ ux-flow 의 데이터 모델이 **Supabase 와 어떻게 연결되는지** 쉽�
    - `docs/{project}/02-ux-flow.md § 페이지 리스트` (페이지·경로·다루는 데이터)
    - `docs/{project}/02-ux-flow.md § UX-flow` (단계별 서사. 외부 API/비동기 트리거 추출)
    - `docs/{project}/02-ux-flow.md § 컴포넌트 리스트` (신규 컴포넌트. 매트릭스 컬럼 3 의 일부)
-   - `docs/{project}/appendix-screen-component-map.md` (재활용/수정/신규 전체. 매트릭스 컬럼 3 의 나머지)
+   - `docs/{project}/02-ux-flow.md § 컴포넌트 리스트` 의 재활용·수정 행 (같은 표에 전체가 있음. 별도 appendix-screen-component-map 파일은 만들지 않음. 매트릭스 컬럼 3 의 나머지)
 2. `resources/doc-templates.md` § "04-data-bridge.md" 템플릿 Read
 3. **자동 매핑** (사용자 질문 0):
    - 데이터명 ← 사전 그대로

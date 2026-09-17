@@ -53,7 +53,7 @@
 - **문서 3종**: `docs/{project}/01~03`이 새 포맷. 결정 현황 블록, 이름 계약(01 대상 → 02 이름 사전 → 03), 가독성 규칙(열 5 · 셀 45자 · 상태 열 금지 · H2 앞 구분선), Mermaid 0, em dash 0, "n절" 표기.
 - **스토리북 01~03**: `src/stories/overview/{Project}{ProjectSummary,UxFlow,VisualDirection}.mdx` 7줄 래퍼 (`?raw` + `<EditorialDocument source={doc} />`). 기존 `*-planning/` 폴더 래퍼는 삭제.
 - **스토리북 04~07**: `{Project}ProjectStructure · {Project}{Data} · {Project}Content · {Project}Assets` 스토리 4개 (3절).
-- **그 밖의 기존 문서**(heptapod 04~08, oneir 04~09, muse 04 + 부록 6, hirst 부록·계획): 새 문서가 대체하지 않으므로 파일 그대로 둔다. 스토리북 노출 없음.
+- **그 밖의 기존 문서**(heptapod 04~08, oneir 04~09, muse 04 + 부록 6, hirst 부록·계획): 새 문서가 대체하지 않으므로 파일 그대로 두고, 기존에 스토리북에 노출돼 있던 것은 노출도 유지한다(번호 체계 밖 문서는 `Overview/{Project}/Appendix/…`, muse 04-data-bridge는 `08 Data Bridge`). 2026-09-18 정정: 처음 계획의 "노출 없음"은 잘못이었고 사용자 지적으로 복구.
 - **구조 스크립트**: `scripts/generate-project-structure.js` 복사 + `package.json`에 `generate-structure` + 실행 결과 `src/data/projectStructure.js`.
 - **개명**: `component-work/resources/project-summary.md` → `starterkit-overview.md` + SKILL.md 표 1행.
 - **룰 재생성**: `pnpm generate-rules` (hirst는 스크립트가 없어 생략).

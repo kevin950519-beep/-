@@ -9,6 +9,8 @@
  * - **Dimmed Shadow**: offset 없이 blur만 사용하는 은은한 그림자
  * - **Pure White**: 깔끔한 흰색 배경
  * - **Brand Blue**: Primary 색상 #0000FF
+ *
+ * 값의 근거: docs/{project}/03-visual-direction.md 3절·5절. 상수 이름은 03 3.1 이름 열과 같게 둔다.
  */
 
 import { createTheme } from '@mui/material/styles';

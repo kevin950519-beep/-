@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fixture Landing: 스모크용 가짜 랜딩</title>
+    <meta name="description" content="extractor 스모크 테스트용 가짜 랜딩 페이지입니다. 실제 사이트가 아닙니다." />
+    <style>
+      :root {
+        --color-bg: #ffffff;
+        --color-ink: #111318;
+        --color-accent: #2f5bff;
+        --space-section: 96px;
+        --radius-md: 12px;
+        --duration-base: 240ms;
+      }
+      body { margin: 0; font-family: Pretendard, sans-serif; color: #111318; }
+      .row { display: flex; }
+      .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+      .btn { border-radius: 12px; background-color: #2f5bff; color: #ffffff; padding: 12px 20px; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; position: sticky; background-color: #ffffff;">
+      <a href="/" class="logo"><img src="/assets/logo.svg" alt="Fixture 로고" width="120" height="28" /></a>
+      <nav>
+        <a href="/features">기능</a>
+        <a href="/pricing">요금</a>
+        <a href="/docs">문서</a>
+        <a href="https://community.example.org/forum">커뮤니티</a>
+      </nav>
+      <a class="btn" href="/signup" style="background-color: #2f5bff; color: #ffffff; border-radius: 12px; padding: 12px 20px;">무료로 시작</a>
+    </header>
+
+    <main>
+      <section class="hero" style="padding: 120px 24px; background-color: #0b0d12; color: #f7f8fb;">
+        <div class="hero__inner" style="display: flex; gap: 48px; align-items: center; max-width: 1200px;">
+          <div class="hero__copy">
+            <p class="eyebrow">새 버전 공개</p>
+            <h1>측정한 구조로 다시 짓는 랜딩</h1>
+            <p class="hero__body">레퍼런스의 리듬만 가져오고 카피와 브랜드는 전부 새로 채웁니다. 이 문장은 테스트용 더미입니다.</p>
+            <a class="btn" href="/signup" style="background-color: #2f5bff; color: #ffffff; border-radius: 12px; padding: 12px 20px;">지금 시작하기</a>
+            <a class="btn btn--ghost" href="/demo" style="border-radius: 12px; padding: 12px 20px;">데모 보기</a>
+          </div>
+          <figure class="hero__media" style="margin: 0;">
+            <img src="/assets/hero-dashboard.webp" alt="대시보드 화면" width="640" height="420" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="logo-cloud" style="padding: 48px 24px; background-color: #f4f5f8;">
+        <p>이미 쓰고 있는 팀</p>
+        <div class="row" style="display: flex; gap: 32px; justify-content: center;">
+          <img src="/assets/client-a.svg" alt="A 스튜디오" width="96" height="24" />
+          <img src="/assets/client-b.svg" alt="B 랩" width="96" height="24" />
+          <img src="/assets/client-c.svg" alt="C 컴퍼니" width="96" height="24" />
+          <img src="/assets/client-d.svg" alt="D 그룹" width="96" height="24" />
+          <img src="/assets/client-e.svg" alt="E 파트너스" width="96" height="24" />
+        </div>
+      </section>
+
+      <section class="features" style="padding: 96px 24px; background-color: #ffffff;">
+        <h2>세 가지 축으로 분해합니다</h2>
+        <div class="grid-3" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; max-width: 1200px;">
+          <article class="card" style="border-radius: 12px; padding: 24px; background-color: #f7f8fb;">
+            <img src="/assets/icon-structure.svg" alt="" width="40" height="40" />
+            <h3>구조</h3>
+            <p>섹션 역할과 순서를 표로 고정합니다. 더미 문장입니다.</p>
+          </article>
+          <article class="card" style="border-radius: 12px; padding: 24px; background-color: #f7f8fb;">
+            <img src="/assets/icon-token.svg" alt="" width="40" height="40" />
+            <h3>토큰</h3>
+            <p>타입 스케일 비와 간격 리듬만 승계합니다. 더미 문장입니다.</p>
+          </article>
+          <article class="card" style="border-radius: 12px; padding: 24px; background-color: #f7f8fb;">
+            <img src="/assets/icon-module.svg" alt="" width="40" height="40" />
+            <h3>모듈</h3>
+            <p>템플릿과 섹션으로 나눠 다시 조립합니다. 더미 문장입니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="pricing" style="padding: 96px 24px; background-color: #f4f5f8;">
+        <h2>요금제</h2>
+        <div class="row" style="display: flex; gap: 24px; max-width: 1200px;">
+          <article class="plan" style="border-radius: 12px; padding: 32px; background-color: #ffffff;">
+            <h3>Starter</h3>
+            <p class="price">$0 / mo</p>
+            <ul><li>페이지 1개</li><li>기본 토큰</li></ul>
+            <a class="btn" href="/signup?plan=starter" style="background-color: #2f5bff; color: #ffffff; border-radius: 12px; padding: 12px 20px;">시작하기</a>
+          </article>
+          <article class="plan" style="border-radius: 12px; padding: 32px; background-color: #ffffff;">
+            <h3>Team</h3>
+            <p class="price">$24 / mo</p>
+            <ul><li>페이지 8개</li><li>섹션 라이브러리</li></ul>
+            <a class="btn" href="/signup?plan=team" style="background-color: #2f5bff; color: #ffffff; border-radius: 12px; padding: 12px 20px;">팀으로 시작</a>
+          </article>
+          <article class="plan" style="border-radius: 12px; padding: 32px; background-color: #ffffff;">
+            <h3>Studio</h3>
+            <p class="price">$72 / mo</p>
+            <ul><li>무제한 페이지</li><li>전담 점검</li></ul>
+            <a class="btn" href="/contact" style="background-color: #2f5bff; color: #ffffff; border-radius: 12px; padding: 12px 20px;">문의하기</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq" style="padding: 96px 24px; background-color: #ffffff;">
+        <h2>자주 묻는 질문</h2>
+        <details><summary>원본 코드를 가져오나요?</summary><p>가져오지 않습니다. 측정값과 패턴만 씁니다.</p></details>
+        <details><summary>이미지도 재사용하나요?</summary><p>아니요. 전부 새 에셋으로 교체합니다.</p></details>
+        <details><summary>모바일도 캡처하나요?</summary><p>뷰포트 목록에 넣으면 같이 캡처합니다.</p></details>
+      </section>
+
+      <section class="cta" style="padding: 96px 24px; background-color: #0b0d12; color: #f7f8fb;">
+        <h2>지금 구조부터 확인해 보세요</h2>
+        <p>가짜 랜딩의 마지막 블록입니다.</p>
+        <a class="btn" href="/signup" style="background-color: #2f5bff; color: #ffffff; border-radius: 12px; padding: 12px 20px;">무료로 시작</a>
+      </section>
+    </main>
+
+    <footer class="site-footer" style="padding: 64px 24px; background-color: #111318; color: #c7ccd8;">
+      <div class="row" style="display: flex; gap: 48px;">
+        <div>
+          <h4>제품</h4>
+          <ul><li><a href="/features">기능</a></li><li><a href="/pricing">요금</a></li><li><a href="/changelog">변경 기록</a></li></ul>
+        </div>
+        <div>
+          <h4>회사</h4>
+          <ul><li><a href="/about">소개</a></li><li><a href="/blog">블로그</a></li><li><a href="/contact">문의</a></li></ul>
+        </div>
+        <div>
+          <h4>정책</h4>
+          <ul><li><a href="/terms">이용약관</a></li><li><a href="/privacy">개인정보</a></li></ul>
+        </div>
+      </div>
+      <p>Fixture Inc. 테스트용 표기입니다.</p>
+    </footer>
+  </body>
+</html>

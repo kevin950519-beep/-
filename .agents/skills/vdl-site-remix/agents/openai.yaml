@@ -1,0 +1,7 @@
+interface:
+  display_name: "VDL Site Remix"
+  short_description: "Rebuild a reference site on this kit with new planning and brand"
+  default_prompt: "Use $vdl-site-remix with a reference URL to analyze it via ego-browser and rebuild it on this starter kit with only the planning and brand replaced."
+
+policy:
+  allow_implicit_invocation: false

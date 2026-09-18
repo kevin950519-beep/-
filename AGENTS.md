@@ -20,11 +20,12 @@ Codex에는 룰 자동 로드가 없다. 아래가 이 프로젝트 규칙의 �
 
 ## 명시 호출 전용 스킬
 
-아래 3개는 자동 발동이 꺼져 있다. 해당 작업이면 `$mention` 으로 직접 호출한다.
+아래 4개는 자동 발동이 꺼져 있다. 해당 작업이면 `$mention` 으로 직접 호출한다.
 
 | 작업 | 스킬 |
 |------|------|
 | 기획 문서 작성 (project-summary → ux-flow → visual-direction) | `$vdl-project-planning` |
+| 레퍼런스 사이트 리믹스 (분석 → 기획·브랜드 교체 → 문서 → 모듈화) | `$vdl-site-remix` (ego-browser 필요) |
 | Supabase 백엔드·인증·RLS·엣지 함수 | `$vdl-supabase-integration` (supabase MCP 필요) |
 | 룰 관계 그래프 재동기화 | `$vdl-rule-visualization` (보통은 `pnpm generate-rules`) |
 

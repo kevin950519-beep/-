@@ -40,11 +40,12 @@ Claude Code가 이 프로젝트의 규칙을 자동으로 따르도록 설정되
 | `mui-grid-usage.md` | MUI v7 Grid import 규칙 (CRITICAL) |
 | `no-em-dash.md` | 모든 산출물에서 em dash 금지 |
 
-**Skills** (`.claude/skills/`, 9개): 의도에 맞을 때 활성화됩니다.
+**Skills** (`.claude/skills/`, 10개): 의도에 맞을 때 활성화됩니다.
 
 | 스킬 | 역할 |
 |------|------|
 | `project-planning` | 기획 문서 3종(01~03) 작성. 명시 호출 전용 |
+| `site-remix` | 레퍼런스 사이트를 ego-browser로 분석해 기획·브랜드만 교체, 문서화와 모듈화까지. 명시 호출 전용 |
 | `component-work` | 컴포넌트 생성/수정/삭제 + 스토리 작성 |
 | `visual-asset-prompt` | 이미지·에셋 생성 프롬프트 설계 (FORMAT/LOOK/SUBJECT) |
 | `stable-layout` | 페이지·섹션 레이아웃 골격 설계, 넘침·CLS 차단 |
@@ -101,6 +102,10 @@ pnpm dev
 - 5는 02 5절 컴포넌트 리스트를 그대로 따라갑니다. 신규를 만들기 전에 재활용을 먼저 확인합니다.
 - 포맷의 단일 기준은 `.claude/skills/project-planning/resources/doc-templates.md`입니다. 스토리북 Overview 페이지의 파일명·제목 규약도 이 문서의 0.6절에 있습니다.
 - 결정은 세 자리에 근거를 남깁니다. 03 3절·5절의 근거 칸, 03 4절 에셋 블록의 근거 줄, 4.2절 프롬프트 원문의 슬롯 표입니다. 이 세 자리가 채워져 있으면 6단계의 Concept & Flow 페이지가 기획에서 결과물까지의 흐름을 도식으로 그릴 수 있습니다.
+
+**레퍼런스 사이트에서 시작할 때**
+
+마음에 드는 웹사이트의 구조를 빌려 시작하려면 `/site-remix <URL>`을 씁니다. ego lite 브라우저로 사이트를 분석해 청사진(`docs/{project}/appendix-reference-analysis.md`)을 만들고, 얼마나 바꿀지(L1 미러 100% / L2 약간의 변주 / L3 구조 변형 응용)를 물은 뒤, 위 1~5단계를 같은 포맷으로 이어 갑니다. 가져오는 것은 구조와 리듬뿐이고 기획, 브랜드, 카피, 이미지는 전부 새로 만듭니다. 구현은 토큰 → 컴포넌트 → 템플릿(`src/components/templates/`) → 섹션(`src/components/sections/`) → 페이지(`src/pages/`) 계층으로 나눕니다.
 
 ## 내 프로젝트에 최적화하기
 

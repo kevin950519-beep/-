@@ -5,7 +5,7 @@
  * 직접 수정하지 마세요. 수정이 필요하면 스크립트를 수정하세요.
  *
  * 생성: pnpm generate-rules
- * 생성일: 2026-09-17
+ * 생성일: 2026-09-18
  */
 
 export const priorityMeta = {
@@ -175,6 +175,41 @@ export const ruleNodes = [
     "description": "Syncs ruleRelationships.js data with actual .claude/ file structure and updates Storybook rule visualization. Run pnpm generate-rules instead for automated sync."
   },
   {
+    "id": "site-remix",
+    "name": "site-remix (Skill)",
+    "priority": "Skill",
+    "path": ".claude/skills/site-remix/SKILL.md",
+    "description": "Analyzes a user-provided reference website with ego-browser (ego lite), then rebuilds it on this starter kit with only the planning and brand replaced. Asks how far to depart from the original (L1 mirror 100%, L2 slight variation, L3 structural transformation), writes project-planning-format docs (01~03 plus a reference-analysis appendix) in docs/{project}/, and modularizes the build into tokens, components, templates, sections, and pages."
+  },
+  {
+    "id": "site-remix--analysis-blueprint",
+    "name": "analysis-blueprint.md",
+    "priority": "Skill Resource",
+    "path": ".claude/skills/site-remix/resources/analysis-blueprint.md",
+    "description": "이 문서는 `docs/{project}/appendix-reference-analysis.md`를 쓰는 규칙과 템플릿이다. 절 번호·제목·섹션 역할 고정 어휘는 `design-spec.md` 5장 그대로다. 여기서 바꾸지 않는다."
+  },
+  {
+    "id": "site-remix--capture-guide",
+    "name": "capture-guide.md",
+    "priority": "Skill Resource",
+    "path": ".claude/skills/site-remix/resources/capture-guide.md",
+    "description": "이 문서는 P1 캡처 단계의 실행 안내다. 스크립트 CLI와 산출 규칙은 `design-spec.md` 7장이 기준이고, 여기서 뒤집지 않는다."
+  },
+  {
+    "id": "site-remix--fidelity-levels",
+    "name": "fidelity-levels.md",
+    "priority": "Skill Resource",
+    "path": ".claude/skills/site-remix/resources/fidelity-levels.md",
+    "description": "> `site-remix` P3(변형 수준 질문) · P4(치환 매핑) · P5(기획 문서 연결)에서 쓰는 단일 기준."
+  },
+  {
+    "id": "site-remix--module-layers",
+    "name": "module-layers.md",
+    "priority": "Skill Resource",
+    "path": ".claude/skills/site-remix/resources/module-layers.md",
+    "description": "> `site-remix` P6(모듈 계획) · P7(구현)에서 쓰는 단일 기준."
+  },
+  {
     "id": "skill-creator",
     "name": "skill-creator (Skill)",
     "priority": "Skill",
@@ -320,6 +355,13 @@ export const ruleNodes = [
     "priority": "Codex Skill",
     "path": ".agents/skills/vdl-rule-visualization/SKILL.md",
     "description": "EXPLICIT INVOCATION ONLY; never auto-activate. Use after adding, editing, or deleting anything under .claude/rules, .claude/skills, .agents/skills, or .codex/agents to resync src/data/ruleRelationships.js and the Storybook rule graph. Korean triggers: 룰 시각화 업데이트, 룰 관계 동기화, 새 스킬 만들어줘. Prefer pnpm generate-rules for the automated path."
+  },
+  {
+    "id": "codex-skill--vdl-site-remix",
+    "name": "vdl-site-remix (Codex Skill)",
+    "priority": "Codex Skill",
+    "path": ".agents/skills/vdl-site-remix/SKILL.md",
+    "description": "EXPLICIT INVOCATION ONLY ($vdl-site-remix or /skills); never auto-activate. Analyzes a user-provided reference website with the installed ego-browser skill, then rebuilds it on this starter kit with only the planning and brand replaced. Asks how far to depart from the original (L1 mirror, L2 slight variation, L3 structural transformation), writes project-planning-format docs (01-03 plus a reference-analysis appendix) in docs/{project}/, and modularizes the build into tokens, components, templates, sections, and pages. Korean triggers: 레퍼런스 사이트 분석해서 브랜드만 바꿔줘, 이 사이트 구조로 내 프로젝트 만들어줘, 사이트 리믹스."
   },
   {
     "id": "codex-skill--vdl-skill-creator",
@@ -518,6 +560,36 @@ export const ruleEdges = [
   },
   {
     "from": "claude-md",
+    "to": "site-remix",
+    "type": "activates",
+    "note": ""
+  },
+  {
+    "from": "site-remix",
+    "to": "site-remix--analysis-blueprint",
+    "type": "resources",
+    "note": ""
+  },
+  {
+    "from": "site-remix",
+    "to": "site-remix--capture-guide",
+    "type": "resources",
+    "note": ""
+  },
+  {
+    "from": "site-remix",
+    "to": "site-remix--fidelity-levels",
+    "type": "resources",
+    "note": ""
+  },
+  {
+    "from": "site-remix",
+    "to": "site-remix--module-layers",
+    "type": "resources",
+    "note": ""
+  },
+  {
+    "from": "claude-md",
     "to": "skill-creator",
     "type": "activates",
     "note": ""
@@ -657,6 +729,18 @@ export const ruleEdges = [
   {
     "from": "codex-skill--vdl-rule-visualization",
     "to": "rule-visualization",
+    "type": "references",
+    "note": "canonical SSOT"
+  },
+  {
+    "from": "agents-md",
+    "to": "codex-skill--vdl-site-remix",
+    "type": "activates",
+    "note": ""
+  },
+  {
+    "from": "codex-skill--vdl-site-remix",
+    "to": "site-remix",
     "type": "references",
     "note": "canonical SSOT"
   },

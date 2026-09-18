@@ -1,0 +1,1062 @@
+{
+  "meta": {
+    "title": "Fixture: 요금제",
+    "lang": "ko",
+    "description": "요약 스크립트 검증용 가짜 요금 페이지입니다.",
+    "path": "/pricing",
+    "host": "fixture.example",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "label": "1440x900",
+      "mobile": false,
+      "requested": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "documentHeight": 3372,
+    "sectionCount": 7,
+    "truncated": false,
+    "rectless": false,
+    "libraries": [
+      "gsap",
+      "lenis",
+      "next",
+      "react"
+    ],
+    "authWall": false,
+    "extractorVersion": "1.0.0",
+    "notes": [],
+    "capturedAt": "2026-09-19T01:40:00.000Z",
+    "slug": "pricing",
+    "requestedPath": "/pricing",
+    "finalPath": "/pricing"
+  },
+  "nav": {
+    "header": {
+      "exists": true,
+      "isSticky": true,
+      "linkCount": 6,
+      "links": [
+        {
+          "text": "Fixture",
+          "path": "/",
+          "isExternal": false,
+          "externalHost": null,
+          "isCta": false
+        },
+        {
+          "text": "기능",
+          "path": "/features",
+          "isExternal": false,
+          "externalHost": null,
+          "isCta": false
+        },
+        {
+          "text": "요금",
+          "path": "/pricing",
+          "isExternal": false,
+          "externalHost": null,
+          "isCta": false
+        },
+        {
+          "text": "문서",
+          "path": "/docs",
+          "isExternal": false,
+          "externalHost": null,
+          "isCta": false
+        },
+        {
+          "text": "커뮤니티",
+          "path": null,
+          "isExternal": true,
+          "externalHost": "community.example.org",
+          "isCta": false
+        },
+        {
+          "text": "무료로 시작",
+          "path": "/signup",
+          "isExternal": false,
+          "externalHost": null,
+          "isCta": true
+        }
+      ]
+    },
+    "footerGroups": [
+      {
+        "title": "제품",
+        "linkCount": 4,
+        "links": [
+          "기능",
+          "요금",
+          "변경 기록",
+          "상태"
+        ]
+      },
+      {
+        "title": "회사",
+        "linkCount": 3,
+        "links": [
+          "소개",
+          "블로그",
+          "채용"
+        ]
+      },
+      {
+        "title": "정책",
+        "linkCount": 2,
+        "links": [
+          "이용약관",
+          "개인정보"
+        ]
+      }
+    ],
+    "ctas": [
+      {
+        "text": "무료로 시작",
+        "kind": "link",
+        "sectionIndex": 0,
+        "isPrimary": true,
+        "path": "/signup"
+      },
+      {
+        "text": "팀으로 시작",
+        "kind": "link",
+        "sectionIndex": 2,
+        "isPrimary": true,
+        "path": "/signup"
+      },
+      {
+        "text": "문의하기",
+        "kind": "link",
+        "sectionIndex": 5,
+        "isPrimary": false,
+        "path": "/contact"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "index": 0,
+      "tag": "header",
+      "landmark": "header",
+      "roleSignals": [
+        "header",
+        "nav"
+      ],
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 72
+      },
+      "headings": [],
+      "textStats": {
+        "chars": 46,
+        "words": 12,
+        "blocks": 0,
+        "linkCount": 6,
+        "ctaCount": 1,
+        "formFields": 0,
+        "detailsCount": 0,
+        "tableCount": 0
+      },
+      "textSample": "",
+      "mediaCount": 1,
+      "controlCount": 0,
+      "layout": {
+        "display": "flex",
+        "columns": 3,
+        "gap": [
+          0,
+          32
+        ],
+        "direction": "row",
+        "align": "center",
+        "justify": "space-between",
+        "textAlign": "start",
+        "maxWidth": 1280,
+        "paddingY": [
+          16,
+          16
+        ],
+        "paddingX": [
+          24,
+          24
+        ]
+      },
+      "repeat": null,
+      "colors": {
+        "background": "#ffffff",
+        "text": "#111318",
+        "isDark": false,
+        "borderTop": null
+      },
+      "position": "sticky",
+      "motion": {
+        "hasTransition": false,
+        "transitionMs": 0,
+        "easing": null,
+        "hasTransform": false,
+        "hasAnimation": false,
+        "hints": [
+          "sticky"
+        ]
+      },
+      "roleGuess": "global-nav",
+      "roleWhy": "header 랜드마크"
+    },
+    {
+      "index": 1,
+      "tag": "section",
+      "landmark": null,
+      "roleSignals": [
+        "intro"
+      ],
+      "rect": {
+        "x": 0,
+        "y": 72,
+        "width": 1440,
+        "height": 320
+      },
+      "headings": [
+        {
+          "level": 1,
+          "text": "규모에 맞춰 고르세요"
+        }
+      ],
+      "textStats": {
+        "chars": 210,
+        "words": 53,
+        "blocks": 2,
+        "linkCount": 0,
+        "ctaCount": 0,
+        "formFields": 0,
+        "detailsCount": 0,
+        "tableCount": 0
+      },
+      "textSample": "",
+      "mediaCount": 0,
+      "controlCount": 0,
+      "layout": {
+        "display": "block",
+        "columns": 1,
+        "gap": [
+          0,
+          0
+        ],
+        "direction": null,
+        "align": null,
+        "justify": null,
+        "textAlign": "center",
+        "maxWidth": 720,
+        "paddingY": [
+          96,
+          96
+        ],
+        "paddingX": [
+          24,
+          24
+        ]
+      },
+      "repeat": null,
+      "colors": {
+        "background": "#ffffff",
+        "text": "#111318",
+        "isDark": false,
+        "borderTop": null
+      },
+      "position": "static",
+      "motion": {
+        "hasTransition": false,
+        "transitionMs": 0,
+        "easing": null,
+        "hasTransform": false,
+        "hasAnimation": false,
+        "hints": []
+      },
+      "roleGuess": "value-prop",
+      "roleWhy": "짧은 제목 중심 블록"
+    },
+    {
+      "index": 2,
+      "tag": "section",
+      "landmark": null,
+      "roleSignals": [
+        "pricing",
+        "plan"
+      ],
+      "rect": {
+        "x": 0,
+        "y": 392,
+        "width": 1440,
+        "height": 780
+      },
+      "headings": [
+        {
+          "level": 2,
+          "text": "요금제"
+        }
+      ],
+      "textStats": {
+        "chars": 620,
+        "words": 155,
+        "blocks": 14,
+        "linkCount": 0,
+        "ctaCount": 3,
+        "formFields": 0,
+        "detailsCount": 0,
+        "tableCount": 0
+      },
+      "textSample": "",
+      "mediaCount": 0,
+      "controlCount": 0,
+      "layout": {
+        "display": "grid",
+        "columns": 3,
+        "gap": [
+          24,
+          24
+        ],
+        "direction": null,
+        "align": null,
+        "justify": null,
+        "textAlign": "start",
+        "maxWidth": 1200,
+        "paddingY": [
+          64,
+          96
+        ],
+        "paddingX": [
+          24,
+          24
+        ]
+      },
+      "repeat": {
+        "count": 3,
+        "childTag": "article",
+        "itemWidth": 384,
+        "itemHeight": 560
+      },
+      "colors": {
+        "background": "#ffffff",
+        "text": "#111318",
+        "isDark": false,
+        "borderTop": null
+      },
+      "position": "static",
+      "motion": {
+        "hasTransition": true,
+        "transitionMs": 240,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "hasTransform": false,
+        "hasAnimation": false,
+        "hints": []
+      },
+      "roleGuess": "pricing",
+      "roleWhy": "가격 신호"
+    },
+    {
+      "index": 3,
+      "tag": "section",
+      "landmark": null,
+      "roleSignals": [
+        "compare"
+      ],
+      "rect": {
+        "x": 0,
+        "y": 1172,
+        "width": 1440,
+        "height": 900
+      },
+      "headings": [
+        {
+          "level": 2,
+          "text": "기능 비교"
+        }
+      ],
+      "textStats": {
+        "chars": 1480,
+        "words": 370,
+        "blocks": 4,
+        "linkCount": 0,
+        "ctaCount": 0,
+        "formFields": 0,
+        "detailsCount": 0,
+        "tableCount": 1
+      },
+      "textSample": "",
+      "mediaCount": 0,
+      "controlCount": 0,
+      "layout": {
+        "display": "block",
+        "columns": 1,
+        "gap": [
+          0,
+          0
+        ],
+        "direction": null,
+        "align": null,
+        "justify": null,
+        "textAlign": "start",
+        "maxWidth": 1200,
+        "paddingY": [
+          96,
+          96
+        ],
+        "paddingX": [
+          24,
+          24
+        ]
+      },
+      "repeat": null,
+      "colors": {
+        "background": "#f4f5f8",
+        "text": "#111318",
+        "isDark": false,
+        "borderTop": null
+      },
+      "position": "static",
+      "motion": {
+        "hasTransition": false,
+        "transitionMs": 0,
+        "easing": null,
+        "hasTransform": false,
+        "hasAnimation": false,
+        "hints": []
+      },
+      "roleGuess": "comparison",
+      "roleWhy": "비교 신호 또는 표 구조"
+    },
+    {
+      "index": 4,
+      "tag": "section",
+      "landmark": null,
+      "roleSignals": [
+        "faq"
+      ],
+      "rect": {
+        "x": 0,
+        "y": 2072,
+        "width": 1440,
+        "height": 520
+      },
+      "headings": [
+        {
+          "level": 2,
+          "text": "요금 관련 질문"
+        }
+      ],
+      "textStats": {
+        "chars": 680,
+        "words": 170,
+        "blocks": 5,
+        "linkCount": 0,
+        "ctaCount": 0,
+        "formFields": 0,
+        "detailsCount": 10,
+        "tableCount": 0
+      },
+      "textSample": "",
+      "mediaCount": 0,
+      "controlCount": 5,
+      "layout": {
+        "display": "block",
+        "columns": 1,
+        "gap": [
+          0,
+          0
+        ],
+        "direction": null,
+        "align": null,
+        "justify": null,
+        "textAlign": "start",
+        "maxWidth": 720,
+        "paddingY": [
+          96,
+          96
+        ],
+        "paddingX": [
+          24,
+          24
+        ]
+      },
+      "repeat": null,
+      "colors": {
+        "background": "#ffffff",
+        "text": "#111318",
+        "isDark": false,
+        "borderTop": null
+      },
+      "position": "static",
+      "motion": {
+        "hasTransition": false,
+        "transitionMs": 0,
+        "easing": null,
+        "hasTransform": false,
+        "hasAnimation": false,
+        "hints": []
+      },
+      "roleGuess": "faq",
+      "roleWhy": "details 반복"
+    },
+    {
+      "index": 5,
+      "tag": "section",
+      "landmark": null,
+      "roleSignals": [
+        "cta"
+      ],
+      "rect": {
+        "x": 0,
+        "y": 2592,
+        "width": 1440,
+        "height": 360
+      },
+      "headings": [
+        {
+          "level": 2,
+          "text": "먼저 무료로 확인해 보세요"
+        }
+      ],
+      "textStats": {
+        "chars": 110,
+        "words": 28,
+        "blocks": 1,
+        "linkCount": 0,
+        "ctaCount": 2,
+        "formFields": 0,
+        "detailsCount": 0,
+        "tableCount": 0
+      },
+      "textSample": "",
+      "mediaCount": 0,
+      "controlCount": 0,
+      "layout": {
+        "display": "block",
+        "columns": 1,
+        "gap": [
+          0,
+          0
+        ],
+        "direction": null,
+        "align": null,
+        "justify": null,
+        "textAlign": "center",
+        "maxWidth": 720,
+        "paddingY": [
+          96,
+          96
+        ],
+        "paddingX": [
+          24,
+          24
+        ]
+      },
+      "repeat": null,
+      "colors": {
+        "background": "#2f5bff",
+        "text": "#ffffff",
+        "isDark": true,
+        "borderTop": null
+      },
+      "position": "static",
+      "motion": {
+        "hasTransition": false,
+        "transitionMs": 0,
+        "easing": null,
+        "hasTransform": false,
+        "hasAnimation": false,
+        "hints": []
+      },
+      "roleGuess": "cta",
+      "roleWhy": "CTA 신호 + 짧은 카피"
+    },
+    {
+      "index": 6,
+      "tag": "footer",
+      "landmark": "footer",
+      "roleSignals": [
+        "footer"
+      ],
+      "rect": {
+        "x": 0,
+        "y": 2952,
+        "width": 1440,
+        "height": 420
+      },
+      "headings": [],
+      "textStats": {
+        "chars": 240,
+        "words": 60,
+        "blocks": 0,
+        "linkCount": 12,
+        "ctaCount": 0,
+        "formFields": 0,
+        "detailsCount": 0,
+        "tableCount": 0
+      },
+      "textSample": "",
+      "mediaCount": 1,
+      "controlCount": 0,
+      "layout": {
+        "display": "flex",
+        "columns": 4,
+        "gap": [
+          0,
+          48
+        ],
+        "direction": null,
+        "align": null,
+        "justify": null,
+        "textAlign": "start",
+        "maxWidth": 1200,
+        "paddingY": [
+          64,
+          64
+        ],
+        "paddingX": [
+          24,
+          24
+        ]
+      },
+      "repeat": null,
+      "colors": {
+        "background": "#111318",
+        "text": "#c7ccd8",
+        "isDark": true,
+        "borderTop": null
+      },
+      "position": "static",
+      "motion": {
+        "hasTransition": false,
+        "transitionMs": 0,
+        "easing": null,
+        "hasTransform": false,
+        "hasAnimation": false,
+        "hints": []
+      },
+      "roleGuess": "footer",
+      "roleWhy": "footer 랜드마크"
+    }
+  ],
+  "tokens": {
+    "colors": {
+      "text": [
+        {
+          "hex": "#111318",
+          "count": 412,
+          "weight": 18240,
+          "saturation": 0.29,
+          "luminance": 0.07
+        },
+        {
+          "hex": "#5b6270",
+          "count": 188,
+          "weight": 9120,
+          "saturation": 0.19,
+          "luminance": 0.38
+        },
+        {
+          "hex": "#f7f8fb",
+          "count": 96,
+          "weight": 4180,
+          "saturation": 0.02,
+          "luminance": 0.97
+        },
+        {
+          "hex": "#2f5bff",
+          "count": 44,
+          "weight": 1180,
+          "saturation": 0.82,
+          "luminance": 0.37
+        }
+      ],
+      "background": [
+        {
+          "hex": "#ffffff",
+          "count": 62,
+          "weight": 4180000,
+          "saturation": 0,
+          "luminance": 1
+        },
+        {
+          "hex": "#f4f5f8",
+          "count": 18,
+          "weight": 1240000,
+          "saturation": 0.02,
+          "luminance": 0.96
+        },
+        {
+          "hex": "#0b0d12",
+          "count": 9,
+          "weight": 980000,
+          "saturation": 0.39,
+          "luminance": 0.05
+        },
+        {
+          "hex": "#2f5bff",
+          "count": 14,
+          "weight": 82000,
+          "saturation": 0.82,
+          "luminance": 0.37
+        }
+      ],
+      "border": [
+        {
+          "hex": "#e3e6ee",
+          "count": 46,
+          "weight": 46,
+          "saturation": 0.05,
+          "luminance": 0.9
+        },
+        {
+          "hex": "#2f5bff",
+          "count": 6,
+          "weight": 6,
+          "saturation": 0.82,
+          "luminance": 0.37
+        }
+      ],
+      "accent": [
+        {
+          "hex": "#2f5bff",
+          "count": 14,
+          "weight": 82000,
+          "saturation": 0.82,
+          "luminance": 0.37
+        },
+        {
+          "hex": "#111318",
+          "count": 5,
+          "weight": 21000,
+          "saturation": 0.29,
+          "luminance": 0.07
+        }
+      ]
+    },
+    "fonts": [
+      {
+        "family": "Pretendard Variable",
+        "usage": [
+          "heading",
+          "body",
+          "ui"
+        ],
+        "weights": [
+          "400",
+          "500",
+          "700"
+        ],
+        "count": 486
+      },
+      {
+        "family": "IBM Plex Mono",
+        "usage": [
+          "ui"
+        ],
+        "weights": [
+          "400"
+        ],
+        "count": 24
+      }
+    ],
+    "typeScale": [
+      {
+        "px": 16,
+        "count": 248,
+        "tags": [
+          "p",
+          "li",
+          "a",
+          "span"
+        ],
+        "weights": [
+          "400"
+        ],
+        "lineHeight": "1.6",
+        "letterSpacing": "normal"
+      },
+      {
+        "px": 14,
+        "count": 96,
+        "tags": [
+          "span",
+          "li"
+        ],
+        "weights": [
+          "400",
+          "500"
+        ],
+        "lineHeight": "1.5",
+        "letterSpacing": "0.01em"
+      },
+      {
+        "px": 20,
+        "count": 42,
+        "tags": [
+          "p"
+        ],
+        "weights": [
+          "400"
+        ],
+        "lineHeight": "1.55",
+        "letterSpacing": "normal"
+      },
+      {
+        "px": 24,
+        "count": 28,
+        "tags": [
+          "h3"
+        ],
+        "weights": [
+          "700"
+        ],
+        "lineHeight": "1.35",
+        "letterSpacing": "-0.01em"
+      },
+      {
+        "px": 32,
+        "count": 14,
+        "tags": [
+          "h3",
+          "p"
+        ],
+        "weights": [
+          "700"
+        ],
+        "lineHeight": "1.3",
+        "letterSpacing": "-0.015em"
+      },
+      {
+        "px": 44,
+        "count": 9,
+        "tags": [
+          "h2"
+        ],
+        "weights": [
+          "700"
+        ],
+        "lineHeight": "1.2",
+        "letterSpacing": "-0.02em"
+      },
+      {
+        "px": 64,
+        "count": 2,
+        "tags": [
+          "h1"
+        ],
+        "weights": [
+          "700"
+        ],
+        "lineHeight": "1.08",
+        "letterSpacing": "-0.03em"
+      }
+    ],
+    "spacing": {
+      "sectionPaddingY": [
+        16,
+        48,
+        64,
+        96,
+        120
+      ],
+      "gaps": [
+        {
+          "px": 24,
+          "count": 18
+        },
+        {
+          "px": 16,
+          "count": 12
+        },
+        {
+          "px": 48,
+          "count": 6
+        },
+        {
+          "px": 32,
+          "count": 5
+        },
+        {
+          "px": 8,
+          "count": 4
+        },
+        {
+          "px": 64,
+          "count": 2
+        }
+      ],
+      "containerMaxWidth": [
+        {
+          "px": 1200,
+          "count": 9
+        },
+        {
+          "px": 720,
+          "count": 3
+        }
+      ],
+      "rhythmBase": {
+        "base": 8,
+        "score": 0.94
+      }
+    },
+    "radius": [
+      {
+        "px": 12,
+        "count": 58
+      },
+      {
+        "px": 999,
+        "count": 14
+      },
+      {
+        "px": 4,
+        "count": 6
+      }
+    ],
+    "shadow": [
+      {
+        "value": "rgba(17, 19, 24, 0.08) 0px 1px 2px 0px",
+        "count": 22
+      },
+      {
+        "value": "rgba(17, 19, 24, 0.12) 0px 12px 32px 0px",
+        "count": 6
+      }
+    ],
+    "cssVariables": [
+      {
+        "name": "--color-bg",
+        "value": "#ffffff"
+      },
+      {
+        "name": "--color-ink",
+        "value": "#111318"
+      },
+      {
+        "name": "--color-muted",
+        "value": "#5b6270"
+      },
+      {
+        "name": "--color-accent",
+        "value": "#2f5bff"
+      },
+      {
+        "name": "--space-section",
+        "value": "96px"
+      },
+      {
+        "name": "--radius-md",
+        "value": "12px"
+      },
+      {
+        "name": "--duration-base",
+        "value": "240ms"
+      },
+      {
+        "name": "--ease-standard",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+    ],
+    "motion": {
+      "durations": [
+        {
+          "ms": 240,
+          "count": 48
+        },
+        {
+          "ms": 160,
+          "count": 18
+        },
+        {
+          "ms": 600,
+          "count": 6
+        }
+      ],
+      "easings": [
+        {
+          "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "count": 52
+        },
+        {
+          "value": "ease-out",
+          "count": 14
+        }
+      ]
+    }
+  },
+  "media": [
+    {
+      "kind": "svg",
+      "role": "logo",
+      "rendered": {
+        "width": 120,
+        "height": 28
+      },
+      "natural": {
+        "width": 120,
+        "height": 28
+      },
+      "ratio": 4.29,
+      "sectionIndex": 0,
+      "hasAlt": true,
+      "format": null,
+      "isLazy": false
+    },
+    {
+      "kind": "svg",
+      "role": "icon",
+      "rendered": {
+        "width": 24,
+        "height": 24
+      },
+      "natural": {
+        "width": 24,
+        "height": 24
+      },
+      "ratio": 1,
+      "sectionIndex": 3,
+      "hasAlt": false,
+      "format": null,
+      "isLazy": true
+    },
+    {
+      "kind": "svg",
+      "role": "icon",
+      "rendered": {
+        "width": 24,
+        "height": 24
+      },
+      "natural": {
+        "width": 24,
+        "height": 24
+      },
+      "ratio": 1,
+      "sectionIndex": 3,
+      "hasAlt": false,
+      "format": null,
+      "isLazy": true
+    },
+    {
+      "kind": "svg",
+      "role": "logo",
+      "rendered": {
+        "width": 120,
+        "height": 28
+      },
+      "natural": {
+        "width": 120,
+        "height": 28
+      },
+      "ratio": 4.29,
+      "sectionIndex": 6,
+      "hasAlt": true,
+      "format": null,
+      "isLazy": true
+    }
+  ]
+}

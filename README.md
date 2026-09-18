@@ -87,17 +87,20 @@ pnpm dev
 | 1. 기획 | 목적, 사용자, 다루는 대상, 핵심 과업을 정한다 | `docs/{project}/01-project-summary.md` | `/project-planning` |
 | 2. UX | 시나리오, 페이지 리스트, 데이터 모델, 컴포넌트 리스트 | `docs/{project}/02-ux-flow.md` | `/project-planning` |
 | 3. 비주얼 디렉션 | 무드, 레이아웃 전략, 토큰 방향, 이미지·에셋 방향 | `docs/{project}/03-visual-direction.md` | `/project-planning` |
-| 4. 재료 준비 | 이미지·영상·소리 생성 프롬프트와 데이터 파일 | `docs/{project}/image-generation/`, `src/data/{project}/` | `/visual-asset-prompt` |
+| 3-2. 토큰 적용 | 03 5절 표대로 theme 파일의 값을 바꾼다 | `src/styles/themes/default.js` | `/component-work` |
+| 4. 생성 재료 준비 | 이미지·영상·소리 생성 프롬프트와 데이터 파일 | `docs/{project}/image-generation/`, `src/data/{project}/` | `/visual-asset-prompt` |
 | 5. 컴포넌트 | 02 5절의 재활용·수정·신규 항목을 구현 | `src/components/{카테고리}/` | `/component-work` |
-| 6. 스토리북 Overview | 기획 문서와 구조·데이터·에셋을 문서 페이지로 | `src/stories/overview/` | `pnpm generate-structure`, `pnpm generate-assets` |
+| 6. 스토리북 Overview | 기획 문서, 구조·데이터·에셋, 결정 흐름 도식을 페이지로 | `src/stories/overview/` | `pnpm generate-structure`, `pnpm generate-assets` |
 | 7. 배포 | 사이트와 스토리북을 함께 빌드해 올린다 | `dist/`, `dist/storybook/` | `pnpm build` |
 
 **순서의 이유**
 
 - 1~3은 앞 문서가 승인돼야 다음이 시작됩니다. 이름은 01에서 한 번만 짓고 02·03이 글자 그대로 씁니다.
-- 3의 4절(이미지·에셋 방향)이 4단계 프롬프트의 입력입니다. 방향 없이 생성부터 하지 않습니다.
+- 3의 3절·5절이 3-2단계 theme 파일의 입력입니다. 5절 표의 근거 칸을 비우지 않아야 어떤 결정이 어떤 토큰이 됐는지 나중에 되짚을 수 있습니다.
+- 3의 4절·4.2절(이미지·에셋 방향과 생성 재료)이 4단계 프롬프트의 입력입니다. 방향 없이 생성부터 하지 않습니다.
 - 5는 02 5절 컴포넌트 리스트를 그대로 따라갑니다. 신규를 만들기 전에 재활용을 먼저 확인합니다.
 - 포맷의 단일 기준은 `.claude/skills/project-planning/resources/doc-templates.md`입니다. 스토리북 Overview 페이지의 파일명·제목 규약도 이 문서의 0.6절에 있습니다.
+- 결정은 세 자리에 근거를 남깁니다. 03 3절·5절의 근거 칸, 03 4절 에셋 블록의 근거 줄, 4.2절 프롬프트 원문의 슬롯 표입니다. 이 세 자리가 채워져 있으면 6단계의 Concept & Flow 페이지가 기획에서 결과물까지의 흐름을 도식으로 그릴 수 있습니다.
 
 ## 내 프로젝트에 최적화하기
 
@@ -105,7 +108,7 @@ pnpm dev
 
 ### 1. 테마 교체
 
-`src/styles/themes/default.js`에서 색상, 타이포, 간격을 프로젝트 브랜드에 맞게 수정합니다. `.claude/rules/design-system.md`의 토큰 예시도 함께 업데이트하면 Claude가 새 토큰을 사용합니다.
+`src/styles/themes/default.js`에서 색상, 타이포, 간격을 프로젝트 브랜드에 맞게 수정합니다. 입력은 `docs/{project}/03-visual-direction.md` 5절의 변경 토큰 요약 표이고, 상수 이름은 3.1절 이름 열을 그대로 씁니다(위 3-2단계). `.claude/rules/design-system.md`의 토큰 예시도 함께 업데이트하면 Claude가 새 토큰을 사용합니다.
 
 ### 2. 불필요한 컴포넌트 정리
 

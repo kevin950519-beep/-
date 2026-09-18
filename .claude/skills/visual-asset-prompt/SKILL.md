@@ -112,7 +112,9 @@ node .claude/skills/visual-asset-prompt/scripts/nano-gen.mjs "<마스터 레퍼�
 
 raster → `nano-gen.mjs`(또는 `nano-banana` 스킬). 아이소 SVG → `isometric-illustration`. 비트맵→아이소 → `bitmap-to-iso`. OG → `og-optimized`. 직접 그리지 않는다.
 
-프로젝트 안에서 작업할 때는 완성 프롬프트와 네거티브를 `docs/{project}/image-generation/prompt-template.md`에 남긴다. 공통 스타일 동결값은 `common-style.md`, 대상별 SUBJECT 값은 `{대상}-specs.md`, 배치 생성 스크립트는 `scripts/generate-{대상}-images.mjs`다. 슬롯 정의는 `project-planning/resources/doc-templates.md`의 03 4.2절 생성 재료에 있다.
+프로젝트 안에서 작업할 때 남기는 것을 "생성 재료"라고 부른다. 완성 프롬프트와 네거티브는 `docs/{project}/image-generation/prompt-template.md`, 공통 스타일 동결값은 `common-style.md`, 대상별 SUBJECT 값은 `{대상}-specs.md`, 배치 생성 스크립트는 `scripts/generate-{대상}-images.mjs`, 실행 기록은 `manifest.json`이다. 슬롯과 형식의 기준은 `project-planning/resources/doc-templates.md`의 03 4.2절 생성 재료다.
+
+`prompt-template.md`에 남길 때의 형식은 그 절을 그대로 따른다. 모드·용도마다 `## {이름} Template` 헤딩 하나와 코드 블록 하나, 가변부는 `{snake_case}`, 코드 블록 아래에 슬롯 표(슬롯 / 출처 파일 / 필드 / 조건), 슬롯을 채운 예시 한 벌이다. 스토리북 Concept & Flow 페이지가 이 형식을 읽어 템플릿 구성 도식을 그린다.
 
 ## 출력 형식
 
@@ -123,12 +125,17 @@ raster → `nano-gen.mjs`(또는 `nano-banana` 스킬). 아이소 SVG → `isome
 - LOOK: 매체·스타일(키워드 1~2개) / 선·톤 / 색 규칙
 - SUBJECT: (시리즈면 목록)
 ## 완성 프롬프트
-FORMAT+LOOK+SUBJECT 를 푼 내러티브.
+FORMAT+LOOK+SUBJECT 를 푼 내러티브. 코드 블록 하나에 전문, 가변부는 {snake_case} 중괄호.
+## 슬롯
+슬롯 / 출처 파일 / 필드 / 조건 표. 시리즈가 아니면 "없음".
 ## 네거티브 프롬프트
 derive 결과에서 핵심만.
 ## 출력 경로
-매체 + 인계 스킬. (시리즈면 마스터→레퍼런스 순회 방식)
+매체 + 인계 스킬. (시리즈면 마스터 이미지를 레퍼런스로 순회)
 ```
+
+- 슬롯의 출처를 모르면 비워 두지 말고 "미정"으로 적고 사용자에게 묻는다. 출처가 없는 슬롯은 나중에 누구도 같은 값을 다시 만들 수 없다.
+- 프로젝트 문서가 있으면 고정부마다 근거(03 3.1절 색, 03 4절 FORMAT 등)를 한 줄로 달아 `prompt-template.md`에 함께 남긴다.
 
 ## 주의
 

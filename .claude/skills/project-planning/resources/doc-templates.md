@@ -138,12 +138,30 @@ import doc from '../../../docs/{project}/01-project-summary.md?raw';
 | 06 Content Data | `{Project}Content.stories.jsx` | `Overview/{Project}/06 Content Data` | 화면 카피·본문 데이터 파일 |
 | 07 Assets | `{Project}Assets.stories.jsx` | `Overview/{Project}/07 Assets` | `src/data/assetInventory.js` (`pnpm generate-assets`) |
 | 08 Domain Knowledge & Research | `{Project}Research.stories.jsx` | `Overview/{Project}/08 Domain Knowledge & Research` | `appendix-research.md`, `docs/research/` |
-| NN Concept & Flow | `{Project}Concept.stories.jsx` | `Overview/{Project}/{NN} Concept & Flow` | 앞 페이지 요약과 스토리 링크 |
+| NN Concept & Flow | `{Project}Concept.stories.jsx` | `Overview/{Project}/{NN} Concept & Flow` | 01~03 원문, theme 객체, 4.2절 프롬프트 원문 |
 | Appendix | `{Project}Appendix{주제}.mdx` | `Overview/{Project}/Appendix/{주제}` | `docs/{project}/appendix-{주제}.md` raw import |
 
 - **05 제목은 대상 이름을 따른다.** 01 4.2절에서 정한 주 대상의 이름을 그대로 쓴다(제품이면 `05 Products Data`, 작품이면 `05 Works Data`). 번호 05는 고정, 가운데 단어만 바뀐다.
 - **04~08은 CSF 스토리**(`.stories.jsx`)이고 **01~03과 Appendix는 MDX 래퍼**다. 문서 원문을 보여주는 페이지만 MDX를 쓴다.
-- **NN Concept & Flow는 선택.** 프로젝트의 컨셉과 단계별 흐름을 한 장으로 모을 때만 만들고, 번호는 그 프로젝트의 마지막 번호 다음을 쓴다.
+- **NN Concept & Flow는 권장.** 기획에서 시작한 결정이 토큰과 프롬프트를 거쳐 결과물이 되기까지를 한 장에 모은다. 번호는 그 프로젝트의 마지막 번호 다음을 쓴다. 페이지의 중심은 아래 두 도식이고, 흐름 표(단계·정한 것·남긴 파일·스토리 링크)와 증거 표(항목·근거 경로·있음/파생/없음)는 도식을 받치는 보조다.
+  - **결정 흐름 격자** (`DecisionFlowGrid`): 행은 스레드, 열은 단계, 칸은 라벨 한 줄과 근거 절 한 줄이다. 스레드는 3~5개로 01 3.1절 핵심 가치나 02 4절 인터랙션 원칙에서 딴다. 열은 기획, UX, 비주얼 디렉션, theme 토큰, 프롬프트·규칙, 결과 순서이고 컨셉에 따라 이름을 바꾼다. 그 단계에 결정이 없는 칸은 비운다.
+  - **템플릿 구성 다이어그램** (`TemplateStack`): 4.2절 프롬프트 원문을 줄 단위 블록으로 나눠 고정부와 슬롯을 구분하고, 왼쪽에 입력(데이터 파일·스펙 문서), 오른쪽에 출력(에셋), 머리에 반복 횟수를 적는다.
+  - 두 컴포넌트는 스타터킷 `src/components/storybookDocumentation/`에 있다. 스토리는 데이터만 채운다.
+
+    ```js
+    const STAGES = [{ key: 'plan', label: '기획', doc: '01' }];
+    const THREADS = [{ key: 'time', name: '시간', nodes: [{ label: '하루의 빛 상태', ref: '01 1절' }, null] }];
+    const TEMPLATE = {
+      title: 'Day Mode Template',
+      repeat: '20 제품',
+      inputs: ['src/data/{project}/product.js', 'image-generation/product-specs.md'],
+      blocks: [{ label: '배경', slot: '{background}', from: '03 3.1 배경 역할', line: '원문 줄' }],
+      outputSrc: 'src/assets/product/p1.png',
+      outputLabel: 'Day 컷',
+    };
+    ```
+
+- **04~08과 NN의 수치·토큰 값은 import에서 계산한다.** 데이터 파일과 theme 객체를 불러 세고, 문서는 `?raw`로 읽어 잘라 쓴다. 문서에 적힌 수치를 문자열로 옮기면 원본이 바뀌어도 그대로 남아 페이지가 거짓을 말한다.
 - 해당 없는 페이지는 만들지 않는다. 데이터가 정적 한 벌뿐이면 05를 06에 합쳐도 된다. 다만 만들 때는 위 이름을 쓴다.
 
 ---
@@ -444,18 +462,18 @@ R 읽기 · W 생성 · D 갱신/삭제. 외부 API·비동기 트리거는 행�
 
 ### 3.2 타이포
 
-| 역할 | 서체 | 방향 (웨이트·크기·자간·행간) | MUI variant |
-|---|---|---|---|
-| 디스플레이 | 세리프 (Tiempos 계열) | 700~800, 타이트 자간 | h1~h3 |
-| 본문 | Pretendard | 400, 18~20px, 행간 1.7 | body1 |
+| 역할 | 서체 | 방향 (웨이트·크기·자간) | MUI variant | 근거 (01 3절) |
+|---|---|---|---|---|
+| 디스플레이 | 세리프 (Tiempos 계열) | 700~800, 타이트 자간 | h1~h3 | 에디토리얼 태도 |
+| 본문 | Pretendard | 400, 18~20px, 행간 1.7 | body1 | 차분함 |
 
 ### 3.3 형태·표면·모션
 
-| 축 | 방향 | 값 (잠정 가능) |
-|---|---|---|
-| radius | 전부 각지게 | `shape.borderRadius: 0` |
-| elevation | 방향성 없는 확산광 | offset 0, blur만 |
-| 전환 템포 | 느린 층 추가 | 0.6s / 0.9s / 1.2s, easeInOutSine |
+| 축 | 방향 | 값 (잠정 가능) | 근거 (01 3절·02 4절) |
+|---|---|---|---|
+| radius | 전부 각지게 | `shape.borderRadius: 0` | 건축적 |
+| elevation | 방향성 없는 확산광 | offset 0, blur만 | Immanence |
+| 전환 템포 | 느린 층 추가 | 0.6s / 0.9s / 1.2s | 02 4절 원칙 1 |
 
 ---
 
@@ -474,6 +492,9 @@ R 읽기 · W 생성 · D 갱신/삭제. 외부 API·비동기 트리거는 행�
   - LOOK: editorial film photo, 3800K warm cast, 매트 질감
   - SUBJECT: 같은 장면의 낮·밤 두 장
   - 하지 않는 것: 3D 렌더, 글로시
+  - 근거: 01 3.1 Immanence, 02 4절 원칙 1, 03 3.1 배경 역할
+
+근거 줄은 블록마다 하나씩 반드시 적는다. 이 값이 프롬프트의 고정부가 어느 결정에서 왔는지를 남기는 유일한 자리이고, Concept 페이지의 템플릿 다이어그램이 블록 라벨 옆에 그대로 쓴다.
 
 ### 4.1 레퍼런스 (사용자 제공만)
 
@@ -487,29 +508,49 @@ R 읽기 · W 생성 · D 갱신/삭제. 외부 API·비동기 트리거는 행�
 
 | 슬롯 | 파일 | 담는 것 | 필수 |
 |---|---|---|---|
-| 프롬프트 원문 | `image-generation/prompt-template.md` | 실제로 보낸 프롬프트 전문과 네거티브, 슬롯 표시 | 예 |
+| 프롬프트 원문 | `image-generation/prompt-template.md` | 프롬프트 전문, 네거티브, 슬롯 표, 채운 예시 | 예 |
 | 공통 스타일·락 | `image-generation/common-style.md` | 시리즈 전체에 동결한 FORMAT·LOOK, 하지 않는 것 | 아니오 |
-| 대상별 슬롯 | `image-generation/{대상}-specs.md` | 대상 하나하나의 SUBJECT 값 (01 4.2절 이름 그대로) | 아니오 |
+| 대상별 슬롯 | `image-generation/{대상}-specs.md` | 대상마다 헤딩 하나, 필드 표와 슬롯 값 | 아니오 |
 | 생성 스크립트 | `scripts/generate-{대상}-images.mjs` | 템플릿에 슬롯을 끼워 배치 생성 | 아니오 |
-| 실행 기록 | `image-generation/manifest.json` | 모델명, 요청 id, 채택·폐기 이력 | 아니오 |
+| 실행 기록 | `image-generation/manifest.json` | model, createdAt 또는 requestId, input, output, selected | 아니오 |
 
 본문에는 이 표의 "쓴 슬롯"만 한 줄로 링크하고 프롬프트 전문은 옮기지 않는다(0.3절 부록 정책과 같은 이유).
 
 - **한 편은 반드시 남긴다.** 생성 프롬프트 원문이 저장소에 없으면 결과 이미지를 재현할 수도, 시리즈를 이어 만들 수도 없다. 나머지 네 슬롯은 규모에 따라 고른다.
 - **`/visual-asset-prompt`가 쓰는 자리.** 그 스킬은 4절 표를 FORMAT/LOOK/SUBJECT 기본값으로 읽고, 완성한 프롬프트를 `prompt-template.md`에 남긴다.
 - **슬롯을 쪼개는 기준은 가변성이다.** 모든 컷에 공통이면 `common-style.md`, 대상마다 다르면 `{대상}-specs.md`.
+- **대상별 슬롯 문서의 형식.** 대상 하나가 헤딩 하나다(`## {대상 이름} #1`). 헤딩 아래에 필드 표를 두고, 긴 서술형 슬롯 값은 슬롯 이름을 소제목으로 단 블록에 넣는다. 필드 이름은 02 3.2절 코드 식별자와 데이터 파일의 키를 그대로 쓴다. 이름이 같아야 생성 스크립트가 데이터 파일에서 값을 찾아 슬롯에 끼울 수 있다.
 - 근거: lumenstate가 세 문서와 생성 스크립트를 모두 갖췄고, hirst·oneir·heptapod는 프롬프트 원문과 실행 기록 위주로 일부만 갖췄다.
+
+**프롬프트 원문의 최소 형식**
+
+- 모드나 용도마다 `## {이름} Template` 헤딩 하나를 두고, 그 바로 아래에 펜스 코드 블록 하나에 프롬프트 전문을 넣는다. 한 헤딩에 코드 블록 두 개를 두지 않는다.
+- 가변부는 `{snake_case}` 중괄호로 표시한다. 중괄호가 없는 줄은 모든 컷에 같은 고정부라는 뜻이다.
+- 코드 블록 아래에 슬롯 표를 둔다. 열은 슬롯, 출처 파일, 필드, 조건(있으면)이다. 조건 칸은 값이 데이터 필드에 따라 갈릴 때만 채우고, 갈래가 셋 이상이면 별도 규칙 표를 만들어 링크한다.
+- 슬롯을 전부 채운 예시 한 벌을 같은 문서에 남긴다. 예시가 없으면 슬롯 표만으로는 결과를 재현할 수 없다.
+- 생성 스크립트가 있으면 머리말에 그 스크립트의 어느 함수·상수를 옮긴 것인지 한 줄로 밝힌다. 문서와 스크립트가 어긋날 때 무엇이 기준인지가 정해진다.
+- 이 형식을 지키는 이유: Concept 페이지의 템플릿 다이어그램이 헤딩으로 블록을 찾고, 첫 코드 블록을 줄 단위로 잘라, 중괄호 유무로 고정부와 슬롯을 나눠 그린다. 형식이 다르면 도식이 문서를 읽지 못해 값을 손으로 옮기게 된다.
+
+`prompt-template.md`의 한 벌은 이 순서다: `## Day Mode Template` 헤딩, 프롬프트 전문 코드 블록 하나, 슬롯 표, 채운 예시.
+
+| 슬롯 | 출처 파일 | 필드 | 조건 |
+|---|---|---|---|
+| `{form}` | `image-generation/product-specs.md` | form | |
+| `{camera}` | `src/data/{project}/product.js` | mounting | 설치 방식마다 시점 다름 |
 
 ---
 
 ## 5. 변경 토큰 요약 (theme.js 입력)
 
-| 토큰 경로 | 현재값 | 변경값 | 적용 대상 |
-|---|---|---|---|
-| `palette.primary.main` | `#0000FF` | `#1A1614` (잠정) | 버튼·링크·본문 |
-| `shape.borderRadius` | `0` | (유지) | 전역 |
+| 토큰 경로 | 현재값 | 변경값 | 적용 대상 | 근거 (3절 행) |
+|---|---|---|---|---|
+| `palette.primary.main` | `#0000FF` | `#1A1614` (잠정) | 버튼·링크 | 3.1 전경·브랜드 중심 |
+| `shape.borderRadius` | `0` | (유지) | 전역 | 3.3 radius |
 
 유지하는 토큰도 "(유지)"로 적는다. 미확정 값은 변경값 칸에 `(잠정)`.
+
+- **근거 칸은 3절의 행 이름을 그대로 쓴다.** 이 칸이 theme 파일의 값과 문서의 결정을 잇는 유일한 고리다. 3절에 없는 값을 5절에 새로 만들지 않는다. 필요하면 3절에 행을 먼저 추가한다.
+- **theme 파일의 상수 이름과 주석은 3.1절 이름 열을 글자 그대로 쓴다.** 3.1절에 `Warm Black`이 있으면 상수도 `warmBlack`이다. 이름이 어긋나면 나중에 토큰 값만 보고는 어느 결정에서 온 색인지 알 수 없다.
 
 ---
 
@@ -549,6 +590,8 @@ R 읽기 · W 생성 · D 갱신/삭제. 외부 API·비동기 트리거는 행�
 - 01 5절 과업 수와 02 1절 시나리오 수가 같고 번호가 맞는가 (개수·번호 대조)
 - 02 1절 단계 표의 화면이 2.1절에 전부 있는가 (이름 대조)
 - 02 2.1절 페이지가 03 2절 두 표에 전부 있는가 (이름 대조)
+- 03 3절 세 표와 5절 표의 근거 칸이 비어 있지 않고, 5절 근거 이름이 3절 행에 실재하는가 (이름 대조)
+- 03 4절 에셋 블록마다 근거 줄이 있고, 4.2절에 쓴 슬롯의 파일이 실제로 있는가 (경로 확인)
 - 01에 금지 어휘가 없는가: hex 값, px 값, "구현 완료", 4.2절 식별자 목록에 없는 PascalCase 토큰 (정규식, 4.2절 식별자 제외)
 - 02 3.2절 테이블명이 `sql-reserved-words.md`에 없는가 (사전 대조)
 - H2 번호·제목이 템플릿과 같은가, 다이어그램이 없는가 (제목 대조, "```mermaid" 검색)

@@ -5,7 +5,8 @@ MUI 커스텀 테마 설정 규칙
 ## 테마 파일 관리
 
 - 커스텀 테마는 별도의 파일로 관리한다
-- 위치: `src/styles/theme.js` 또는 유사 경로
+- 위치: 스타터킷은 `src/styles/themes/default.js` (`src/styles/themes/index.js`가 export)
+- 이 문서의 값이 `03-visual-direction.md` 5절 "현재값" 열의 원천이다. 값을 바꿀 때는 `.claude/rules/design-system.md`의 "토큰을 바꾸는 순서"를 따라 03 3절·5절을 먼저 고친다
 
 ## Typography
 

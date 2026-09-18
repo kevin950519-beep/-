@@ -52,3 +52,12 @@ src/
 
 - 디자인 토큰 문서화 (색상, 타이포 등) → `src/stories/style/`
 - 프로젝트 소개/가이드 → `src/stories/overview/`
+
+### 기획 문서와 생성 재료
+
+- 기획 문서 3종과 부록 → `docs/{project}/` (`01-project-summary.md`, `02-ux-flow.md`, `03-visual-direction.md`, `appendix-{주제}.md`)
+- 이미지·영상·소리 생성 재료 → `docs/{project}/image-generation/` (프롬프트 원문, 공통 스타일, 대상별 슬롯, 실행 기록)
+- 정적·클라이언트 데이터 파일 → `src/data/{project}/{식별자}.js` (파일명은 02 3.2절 코드 식별자)
+- 배치 생성 스크립트 → `scripts/generate-{대상}-images.mjs`
+
+슬롯과 형식의 기준은 `.claude/skills/project-planning/resources/doc-templates.md` 0.6절과 03 4.2절이다.

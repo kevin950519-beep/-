@@ -75,6 +75,9 @@
 - **이름 규칙**: 다루는 대상과 사용자 유형의 이름은 01 4절에서 정한다(한글 이름 + 영문 PascalCase 식별자). 02·03은 글자 단위로 그대로 쓴다.
 - **다이어그램 금지**: Mermaid 등 다이어그램을 쓰지 않는다. 흐름은 02 1절의 단계 표로, 계층은 02 2.2절의 코드 블록 트리로.
 - **부록 정책**: 분량 상한을 넘거나 구현 디테일(SQL, 좌표계, 프롬프트 전문)이면 `appendix-{주제}.md`로 분리하고 본문에서 한 줄로 링크. 부록도 헤더 3줄(H1 `{프로젝트명}: Appendix {주제}`, 결정하는 것, 입력·출력 대상)과 결정 현황 블록을 갖는다. 본문 구조는 자유.
+- **이름 있는 부록**: 아래 두 개는 주제를 임의로 짓지 않고 이 이름을 쓴다.
+  - `appendix-research.md`: 원작 조사, 도메인 수치, 출처. 01 2절 배경에서 한 줄로 링크한다. 스토리북 `08 Domain Knowledge & Research` 페이지의 원천이다.
+  - 이미지·영상·소리 생성 재료는 부록이 아니라 03 4.2절이 정한 `docs/{project}/image-generation/` 슬롯에 둔다. `appendix-image-generation.md`를 따로 만들지 않는다.
 - **분량 상한 (권장)**: 01 120줄, 02 250줄, 03 200줄 (구분선·비고 목록 포함). 넘으면 부록 분리를 제안한다. 자르지 않는다.
 - **기호**: em dash(U+2014) 금지. H1 구분은 콜론. 상태 표기에 이모지를 쓰지 않는다.
 - **버전**: `*.v1.md` 같은 병존 파일 금지. 개정은 결정 현황 블록의 개정 줄과 git으로.
@@ -125,6 +128,23 @@ import doc from '../../../docs/{project}/01-project-summary.md?raw';
   - `태그라인: …` 문단 → Tagline 라벨 + 큰 글자
   - 표 → 세로선 없이 가로 괘선만, 머리글은 라벨 톤. `---` → 위아래 여백이 넓은 얇은 괘선
 - 파일 이름과 제목: 01 `{Project}ProjectSummary.mdx` / `Overview/{Project}/01 Project Summary`, 02 `{Project}UxFlow.mdx` / `02 UX Flow`, 03 `{Project}VisualDirection.mdx` / `03 Visual Direction`.
+
+01~03 뒤에 붙는 페이지의 규약은 아래와 같다. 스타터킷은 이 페이지들의 파일을 복제해 주지 않고 이름·제목·원천만 고정한다. 내용은 프로젝트마다 다르므로 직접 만든다.
+
+| 번호·제목 | 파일 | title | 데이터 원천 |
+|---|---|---|---|
+| 04 Project Structure | `{Project}ProjectStructure.stories.jsx` | `Overview/{Project}/04 Project Structure` | `src/data/projectStructure.js` (`pnpm generate-structure`) |
+| 05 {대상} Data | `{Project}{대상}Data.stories.jsx` | `Overview/{Project}/05 {대상} Data` | `src/data/{project}/{식별자}.js` (02 3.2절) |
+| 06 Content Data | `{Project}Content.stories.jsx` | `Overview/{Project}/06 Content Data` | 화면 카피·본문 데이터 파일 |
+| 07 Assets | `{Project}Assets.stories.jsx` | `Overview/{Project}/07 Assets` | `src/data/assetInventory.js` (`pnpm generate-assets`) |
+| 08 Domain Knowledge & Research | `{Project}Research.stories.jsx` | `Overview/{Project}/08 Domain Knowledge & Research` | `appendix-research.md`, `docs/research/` |
+| NN Concept & Flow | `{Project}Concept.stories.jsx` | `Overview/{Project}/{NN} Concept & Flow` | 앞 페이지 요약과 스토리 링크 |
+| Appendix | `{Project}Appendix{주제}.mdx` | `Overview/{Project}/Appendix/{주제}` | `docs/{project}/appendix-{주제}.md` raw import |
+
+- **05 제목은 대상 이름을 따른다.** 01 4.2절에서 정한 주 대상의 이름을 그대로 쓴다(제품이면 `05 Products Data`, 작품이면 `05 Works Data`). 번호 05는 고정, 가운데 단어만 바뀐다.
+- **04~08은 CSF 스토리**(`.stories.jsx`)이고 **01~03과 Appendix는 MDX 래퍼**다. 문서 원문을 보여주는 페이지만 MDX를 쓴다.
+- **NN Concept & Flow는 선택.** 프로젝트의 컨셉과 단계별 흐름을 한 장으로 모을 때만 만들고, 번호는 그 프로젝트의 마지막 번호 다음을 쓴다.
+- 해당 없는 페이지는 만들지 않는다. 데이터가 정적 한 벌뿐이면 05를 06에 합쳐도 된다. 다만 만들 때는 위 이름을 쓴다.
 
 ---
 
@@ -319,6 +339,8 @@ R 읽기 · W 생성 · D 갱신/삭제. 외부 API·비동기 트리거는 행�
 
 `/supabase-integration`이 데이터명과 테이블명을 1:1로 매핑하는 기준. 영속성이 "서버"인 행만 테이블명을 채우고, 나머지는 `(정적)` 또는 `(클라이언트)`로 적는다. 작성 시 `resources/sql-reserved-words.md`와 대조한다.
 
+`(정적)`·`(클라이언트)` 행은 코드 파일이 목적지다. 파일 경로는 `src/data/{project}/{식별자}.js` 또는 `.json`이고 파일명은 코드 식별자를 그대로 쓴다(`product` 행이면 `src/data/{project}/product.js`). 스토리북 `05 {대상} Data` 페이지가 이 파일을 import해서 표로 그린다.
+
 ---
 
 ## 4. 인터랙션 원칙 (최대 5)
@@ -459,6 +481,25 @@ R 읽기 · W 생성 · D 갱신/삭제. 외부 API·비동기 트리거는 행�
 |---|---|---|---|
 | REF-01 | `refs/hero-01.webp` | 벽면 톤, 그림자 확산 | 예 |
 
+### 4.2 생성 재료
+
+4절이 방향이라면 4.2절은 그 방향으로 실제 이미지·영상·소리를 만들 때 쓰는 재료다. 위치는 `docs/{project}/image-generation/`로 고정한다. 4절이 "해당 없음"이면 4.2절도 "해당 없음: {이유}" 한 줄.
+
+| 슬롯 | 파일 | 담는 것 | 필수 |
+|---|---|---|---|
+| 프롬프트 원문 | `image-generation/prompt-template.md` | 실제로 보낸 프롬프트 전문과 네거티브, 슬롯 표시 | 예 |
+| 공통 스타일·락 | `image-generation/common-style.md` | 시리즈 전체에 동결한 FORMAT·LOOK, 하지 않는 것 | 아니오 |
+| 대상별 슬롯 | `image-generation/{대상}-specs.md` | 대상 하나하나의 SUBJECT 값 (01 4.2절 이름 그대로) | 아니오 |
+| 생성 스크립트 | `scripts/generate-{대상}-images.mjs` | 템플릿에 슬롯을 끼워 배치 생성 | 아니오 |
+| 실행 기록 | `image-generation/manifest.json` | 모델명, 요청 id, 채택·폐기 이력 | 아니오 |
+
+본문에는 이 표의 "쓴 슬롯"만 한 줄로 링크하고 프롬프트 전문은 옮기지 않는다(0.3절 부록 정책과 같은 이유).
+
+- **한 편은 반드시 남긴다.** 생성 프롬프트 원문이 저장소에 없으면 결과 이미지를 재현할 수도, 시리즈를 이어 만들 수도 없다. 나머지 네 슬롯은 규모에 따라 고른다.
+- **`/visual-asset-prompt`가 쓰는 자리.** 그 스킬은 4절 표를 FORMAT/LOOK/SUBJECT 기본값으로 읽고, 완성한 프롬프트를 `prompt-template.md`에 남긴다.
+- **슬롯을 쪼개는 기준은 가변성이다.** 모든 컷에 공통이면 `common-style.md`, 대상마다 다르면 `{대상}-specs.md`.
+- 근거: lumenstate가 세 문서와 생성 스크립트를 모두 갖췄고, hirst·oneir·heptapod는 프롬프트 원문과 실행 기록 위주로 일부만 갖췄다.
+
 ---
 
 ## 5. 변경 토큰 요약 (theme.js 입력)
@@ -479,7 +520,7 @@ R 읽기 · W 생성 · D 갱신/삭제. 외부 API·비동기 트리거는 행�
 | theme.js 수정 | 5절 표 |
 | /component-work | 3절 토큰 방향(컴포넌트 스타일 근거), 5절 표 |
 | /layout-composer | 2절 표의 아키타입·콘텐츠 신호 |
-| /visual-asset-prompt | 4절 표, 4.1절 레퍼런스 ID |
+| /visual-asset-prompt | 4절 표, 4.1절 레퍼런스 ID, 4.2절 재료 슬롯 |
 ```
 
 **하드 게이트 (문서 승인 최소 조건):** 1절 키워드 확정 · 2절 표에 02 2.1절의 페이지 전부 등장 · 3.1절 역할 팔레트의 이름·역할 확정(값은 잠정 허용) · 5절 표 존재. 4절는 "해당 없음" 명시로도 충족.

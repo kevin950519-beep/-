@@ -54,7 +54,11 @@ const preview = {
           'Interactive',
           ['12. Scroll'],
           'Common',
+          // 프로젝트 카테고리 (storybook-writing.md 카테고리 표와 같은 이름 집합)
+          'Custom Component',
+          'Section',
           'Template',
+          'Page',
           'Test Data',
         ],
         method: 'alphabetical',

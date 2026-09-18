@@ -43,7 +43,7 @@ when_to_use: ALWAYS invoke this skill when files under src/components/ are creat
    - 조합·페이지·섹션·히어로 레이아웃 → `stable-layout` 스킬 절차 적용
    - 상시(원자 컴포넌트 포함): ai-slop 기본값 차단 넛지 적용
 5. **구현**:
-   - `project-directory.md`에 따라 위치 결정
+   - `.claude/rules/directory-structure.md`에 따라 위치 결정
    - `resources/storybook-writing.md` Read → 스토리 작성
    - 인터랙티브 감지 시 → `resources/interactive-principles.md` Read
    - `resources/components.md` 업데이트 (MUST)

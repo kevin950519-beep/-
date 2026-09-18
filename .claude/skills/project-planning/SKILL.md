@@ -65,6 +65,7 @@ disable-model-invocation: true
 3. 템플릿 3절 기준으로 `docs/{project}/03-visual-direction.md` 작성.
    - 2절 아키타입은 `src/data/layoutTaxonomyData.js`의 id만 쓴다.
    - 4절 이미지·에셋 방향은 FORMAT / LOOK / SUBJECT 구조. LOOK 키워드는 1~2개. 해당 없으면 "해당 없음: {이유}".
+   - 4.2절 생성 재료는 슬롯 표만 채운다. 필수는 `image-generation/prompt-template.md` 한 편이고 나머지 네 슬롯은 쓸 것만 남긴다. 프롬프트 전문을 03 본문에 옮기지 않는다.
    - 레퍼런스는 사용자 제공만. 임의 URL·경로 금지.
 4. 정합성 점검: 02 2.1절 페이지가 2절 표에 전부.
 5. 하드 게이트 체크리스트 출력, 승인.
@@ -148,7 +149,7 @@ disable-model-invocation: true
 | 스킬 | 읽는 섹션 |
 |---|---|
 | `/supabase-integration` | 02 3.2절 데이터 모델 활용(사전), 2.1절 페이지 리스트, 1절 UX-flow 단계 표, 5절 컴포넌트 리스트 |
-| `/visual-asset-prompt` | 03 4절 이미지·에셋 방향(FORMAT / LOOK / SUBJECT), 4.1절 레퍼런스 |
+| `/visual-asset-prompt` | 03 4절 이미지·에셋 방향(FORMAT / LOOK / SUBJECT), 4.1절 레퍼런스, 4.2절 생성 재료 |
 | `/layout-composer` | 03 2절 레이아웃 전략(아키타입, 콘텐츠 신호 4축) |
 | `/component-work` | 02 5절, 03 3절·5절 |
 

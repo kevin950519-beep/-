@@ -112,6 +112,8 @@ node .claude/skills/visual-asset-prompt/scripts/nano-gen.mjs "<마스터 레퍼�
 
 raster → `nano-gen.mjs`(또는 `nano-banana` 스킬). 아이소 SVG → `isometric-illustration`. 비트맵→아이소 → `bitmap-to-iso`. OG → `og-optimized`. 직접 그리지 않는다.
 
+프로젝트 안에서 작업할 때는 완성 프롬프트와 네거티브를 `docs/{project}/image-generation/prompt-template.md`에 남긴다. 공통 스타일 동결값은 `common-style.md`, 대상별 SUBJECT 값은 `{대상}-specs.md`, 배치 생성 스크립트는 `scripts/generate-{대상}-images.mjs`다. 슬롯 정의는 `project-planning/resources/doc-templates.md`의 03 4.2절 생성 재료에 있다.
+
 ## 출력 형식
 
 ```markdown

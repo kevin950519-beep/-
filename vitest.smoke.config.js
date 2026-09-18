@@ -19,7 +19,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     /**
-     * webpack/jsconfig 로만 선언된 별칭(heptapod 의 `@/*` -> `src/*`)을 Vite 에도 알린다.
+     * webpack/jsconfig 로만 선언된 별칭(예: Next.js 프로젝트의 `@/*` -> `src/*`)을 Vite 에도 알린다.
      * 문자열 '@' 로 두면 @mui/material 까지 걸리므로 `^@/` 정규식으로 한정한다.
      */
     alias: [

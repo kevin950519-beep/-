@@ -12,6 +12,19 @@ Storybook 스토리 작성 시 준수해야 할 규칙
 | **Section** | `Section/` | 페이지를 구성하는 섹션 단위 컴포넌트 |
 | **Page** | `Page/` | 전체 페이지 레벨 컴포넌트 |
 
+### Custom Component 번호 규칙
+
+`Custom Component/` 아래는 번호 그룹으로 나눈다. 사이드바 순서가 컴포넌트를 찾는 순서가 되기 때문이다.
+
+| 번호 | title | 담는 것 |
+|------|-------|--------|
+| `0. Hierarchy` | `Custom Component/0. Hierarchy` | 이 프로젝트 컴포넌트 전체의 계층 개요 한 장 |
+| `1. {용도}` ~ `N. {용도}` | `Custom Component/3. Card/ProductCard` | 용도별 그룹. 그룹 이름은 `directory-structure.md`의 폴더명을 따른다 |
+
+- **`0. Hierarchy`는 문서 스토리다.** 컴포넌트를 렌더하지 않고, 페이지·섹션에서 컴포넌트로 내려가는 포함 관계를 트리로 그린다. 번호 0이라 항상 맨 위에 온다.
+- **그룹 번호는 1부터.** 새 그룹이 생기면 뒤에 붙이고 기존 번호를 다시 매기지 않는다.
+- 그룹 순서는 `.storybook/preview.jsx`의 `storySort.order`와 같아야 한다. 한쪽만 고치면 사이드바에서 어긋난다.
+
 ## 필수 규칙
 
 ### 공통
@@ -78,7 +91,7 @@ import { placeholderSvg } from '../../common/ui/Placeholder';
 <Placeholder.Media size="small" width={120} />
 ```
 
-#### placeholderSvg — 독립 SVG 헬퍼
+#### placeholderSvg (독립 SVG 헬퍼)
 
 다른 컴포넌트에서 이미지 슬롯에 점 패턴 SVG를 직접 넣을 때 사용:
 
@@ -92,7 +105,7 @@ import { placeholderSvg } from '../../common/ui/Placeholder';
 <img src={Placeholder.svg(800, 450)} alt="" />
 ```
 
-- `placeholderSvg(width?, height?)` — 기본값: 400×300
+- `placeholderSvg(width?, height?)`: 기본값 400×300
 - 16px 간격 점 그리드, `#f5f5f5` 배경, `#bdbdbd` 점
 - `data:image/svg+xml` data URI 반환 → 네트워크 요청 없음
 

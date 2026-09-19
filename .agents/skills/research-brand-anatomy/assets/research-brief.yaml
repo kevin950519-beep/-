@@ -1,0 +1,55 @@
+case_title: ""
+research_depth: "rapid"
+expanded_depth_rationale: ""
+reference_brand:
+  name: ""
+  entity_scope: ""
+  product_mode: "" # physical | digital | hybrid | mixed
+  portfolio_or_product_lines: []
+  markets: []
+  languages: []
+  channels: []
+  era_start: ""
+  era_end: ""
+research_priorities:
+  - "strategy and portfolio"
+  - "verbal system"
+  - "identity and channel tokens"
+  - "key visual and brand mood"
+  - "photography and film"
+  - "product representation"
+  - "product-native visual and cognitive language"
+  - "product, interface, and service behavior"
+exclusions: []
+inapplicable_visual_layers: []
+inapplicable_visual_layer_rationale: ""
+deliverable:
+  language: "ko"
+  depth: "concise"
+  image_bearing_storybook: true
+report_identity:
+  hero_background_color: ""
+  hero_foreground_color: ""
+  hero_color_layer: "identity"
+  hero_logo_evidence_id: ""
+  hero_logo_local_path: ""
+  hero_logo_source_url: ""
+  hero_logo_credit: ""
+  hero_logo_rights_note: ""
+  hero_logo_variant: ""
+  hero_logo_render_treatment: "none" # none | invert(1) | brightness(0)
+  hero_identity_scope: ""
+evidence_thresholds:
+  structural_sources: 4
+  primary_structural_sources: 3
+  visual_candidates: 8
+  unique_local_visuals: 8
+  visual_layers: 4
+  core_claims: 8
+  grammar_rules: 4
+research_constraints:
+  browser_automation_allowed: false
+  rapid_timebox_minutes: 10
+  research_stop_minute: 8
+  notes: ""
+original_user_priority: ""

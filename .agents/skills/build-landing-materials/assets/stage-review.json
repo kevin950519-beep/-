@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "stage_review",
+  "stage": "landing_materials",
+  "status": "pending",
+  "pipeline_state_path": "",
+  "review_targets": [
+    "copy tone and hierarchy",
+    "brand value and story",
+    "product introduction and lineup clarity",
+    "product-render consistency and landing-section fit"
+  ],
+  "adjustment_prompts": [
+    "카피 위계와 스토리, 제품 라인업의 차이, 제품 이미지의 일관성에서 바꿀 부분이 있습니까? 없으면 이 재료 패키지를 완료합니다."
+  ],
+  "user_feedback": [],
+  "updated_at": ""
+}

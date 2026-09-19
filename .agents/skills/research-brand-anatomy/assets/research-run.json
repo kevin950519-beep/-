@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "brand_research_run",
+  "mode": "rapid",
+  "timebox_minutes": 10,
+  "started_at": null,
+  "deadline_at": null,
+  "completed_at": null,
+  "elapsed_seconds": null,
+  "status": "not_started",
+  "stop_reason": null
+}

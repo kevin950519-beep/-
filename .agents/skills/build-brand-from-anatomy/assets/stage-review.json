@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "stage_review",
+  "stage": "extended_brand_anatomy",
+  "status": "pending",
+  "pipeline_state_path": "",
+  "review_targets": [
+    "positioning and source distance",
+    "product family, lineup, and product form",
+    "key visual, brand mood, and registered anchor images",
+    "landing-page design-token relationships"
+  ],
+  "adjustment_prompts": [
+    "브랜드 방향, 제품 라인업과 형태, 두 대표 이미지 중 바꿀 부분이 있습니까? 없으면 다음 단계로 진행합니다."
+  ],
+  "user_feedback": [],
+  "updated_at": ""
+}

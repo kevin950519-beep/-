@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Landing Materials"
+  short_description: "Landing UX copy and registered product renders"
+  default_prompt: "Use $build-landing-materials with my accepted extended-brand anatomy to create a Storybook+JSON landing-material report, product-lineup copy, and registered product renders, then stop for my adjustment review."

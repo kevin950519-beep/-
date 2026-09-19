@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.1.0",
+  "artifact_type": "landing_materials_input",
+  "status": "draft",
+  "extended_brand_source": {
+    "package_path": "",
+    "json_path": "outputs/extended-brand-anatomy.json",
+    "asset_registry_path": "asset-registry.json",
+    "review_path": "stage-review.json"
+  },
+  "language": "",
+  "landing_goal": "",
+  "goal_source": "",
+  "selected_narrative_route": "",
+  "known_constraints": [],
+  "user_wording": []
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.1.0",
+  "artifact_type": "landing_materials",
+  "generated_at": "",
+  "extended_brand_source": {
+    "package_path": "",
+    "json_path": "outputs/extended-brand-anatomy.json",
+    "review_status": "accepted"
+  },
+  "selected_narrative_route": "",
+  "message_visual_map": {
+    "brand_message_to_key_visual": "",
+    "brand_values_to_brand_mood": [],
+    "family_and_product_usp_to_product_imagery": []
+  },
+  "landing_narrative": {
+    "key_insight": "",
+    "brand_message": "",
+    "hero_eyebrow": "",
+    "hero_headline": "",
+    "hero_support": "",
+    "section_sequence": [],
+    "primary_cta": ""
+  },
+  "brand_value": {
+    "key_insight": "",
+    "values": [],
+    "statement": "",
+    "proof": [],
+    "short_variants": []
+  },
+  "brand_story": {
+    "key_insight": "",
+    "headline": "",
+    "body": "",
+    "product_connection": ""
+  },
+  "product_introduction": {
+    "key_insight": "",
+    "family_name": "",
+    "headline": "",
+    "description": "",
+    "shared_promise": "",
+    "family_usp": ""
+  },
+  "product_lineup_key_insight": "",
+  "product_lineup_copy": [],
+  "section_map_key_insight": "",
+  "section_map": [],
+  "registered_product_assets": [],
+  "boundaries": {
+    "key_insight": "",
+    "unverified_claims": [],
+    "protected_brand_and_product_invariants": [],
+    "out_of_scope": ["landing page code", "component system", "new brand strategy"]
+  }
+}

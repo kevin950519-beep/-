@@ -1,0 +1,22 @@
+source_analysis:
+  reference_brand: ""
+  exact_scope: ""
+  package_path: ""
+  anatomy_path: "source-brand-anatomy.md"
+  grammar_path: "grammar-kernel.md"
+  manifest_path: "source-manifest.csv"
+  visual_corpus_path: "visual-corpus.csv"
+  contact_sheet_path: "contact-sheets/overview.jpg"
+  validation_status: "pending"
+  version: ""
+  delivered_at: ""
+  source_json_schema_version: "1.2.0"
+package_integrity:
+  anatomy_sha256: ""
+  grammar_sha256: ""
+  source_json_sha256: ""
+approved_grammar_ids: []
+protected_surface_families: []
+unresolved_source_gaps: []
+target_direction: null
+next_required_action: "Obtain new user transfer direction in a separate build-brand-from-anatomy run."

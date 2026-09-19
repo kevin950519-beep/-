@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commercial Photo Prompting"
+  short_description: "Route web photo roles and compile credible prompts"
+  default_prompt: "Use $commercial-photo-prompting to choose the web UI role, angle, framing, and physical photo behavior, then compile this visual intent into a coherent plan or generation-ready prompt."

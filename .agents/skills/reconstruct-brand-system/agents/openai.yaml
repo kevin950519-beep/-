@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reconstruct Brand System"
+  short_description: "Chain the reviewed three-stage brand pipeline"
+  default_prompt: "Use $reconstruct-brand-system to run and automatically chain source analysis, extended target-brand anatomy with anchor images, and landing materials as Storybook+JSON reports. Pause for my approval after each stage, then invoke the next skill without making me restart it."

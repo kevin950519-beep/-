@@ -1,0 +1,12 @@
+current_stage: SOURCE_SCOPE_UNINITIALIZED
+gates:
+  A0_SOURCE_BRIEF_LOCKED: pending
+  A1_SOURCE_EVIDENCE_PACKAGE_COMPLETE: pending
+  A2_SOURCE_ANATOMY_COMPLETE: pending
+  A3_SOURCE_GRAMMAR_AND_SYSTEM_COMPLETE: pending
+  A4_SOURCE_ANALYSIS_DELIVERED: pending
+  A5_SOURCE_REVIEW_RECORDED: pending
+hard_stop:
+  status: active
+  next_required_action: "Review the source analysis and record adjustments or acceptance in stage-review.json."
+notes: []

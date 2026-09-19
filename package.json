@@ -13,7 +13,12 @@
     "generate-rules": "node scripts/generate-rules.js",
     "generate-structure": "node scripts/generate-project-structure.js",
     "generate-assets": "node scripts/generate-asset-inventory.js",
-    "smoke": "vitest run --config vitest.smoke.config.js"
+    "smoke": "vitest run --config vitest.smoke.config.js",
+    "check-brand-report-contracts": "node scripts/brand-reports/check-report-contracts.mjs",
+    "finalize-brand-report": "node scripts/brand-reports/finalize-brand-report.mjs",
+    "test-brand-report-pipeline": "node scripts/brand-reports/test-brand-report-pipeline.mjs",
+    "register-brand-report": "node scripts/brand-reports/register-brand-report.mjs",
+    "unregister-brand-report": "node scripts/brand-reports/unregister-brand-report.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

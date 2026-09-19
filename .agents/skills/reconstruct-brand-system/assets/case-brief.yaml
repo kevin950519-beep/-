@@ -1,0 +1,33 @@
+case_title: ""
+reference_brand:
+  name: ""
+  scope: ""
+  product_line: ""
+  markets: []
+  channels: []
+  era_start: ""
+  era_end: ""
+target_product:
+  name: ""
+  category: ""
+  audience: ""
+  job_to_be_done: ""
+  use_context: ""
+  platform: ""
+  markets: []
+transfer_intensity: "balanced"
+deliverable:
+  language: "ko"
+  format: "markdown"
+  depth: "full"
+assumptions: []
+provided_assets: []
+evidence_thresholds:
+  structural_sources: 12
+  primary_structural_sources: 8
+  visual_candidates: 24
+  unique_local_visuals: 24
+  visual_categories: 4
+research_constraints:
+  browser_automation_allowed: false
+  notes: ""

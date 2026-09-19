@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Brand Anatomy"
+  short_description: "Source anatomy with a user review checkpoint"
+  default_prompt: "Use $research-brand-anatomy to research one reference brand, deliver its evidence-backed Storybook+JSON anatomy, then stop for my adjustment review."

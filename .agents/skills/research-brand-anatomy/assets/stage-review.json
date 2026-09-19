@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "stage_review",
+  "stage": "source_brand_analysis",
+  "status": "pending",
+  "pipeline_state_path": "",
+  "review_targets": [
+    "analysis scope and exclusions",
+    "brand grammar and key-visual interpretation",
+    "brand mood, product representation, and product-native language",
+    "global color, typography, spacing, and layout relationships"
+  ],
+  "adjustment_prompts": [
+    "분석에서 잘못 이해했거나 빠진 원본 브랜드 특징이 있습니까? 없으면 다음 단계로 진행합니다."
+  ],
+  "user_feedback": [],
+  "updated_at": ""
+}

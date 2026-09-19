@@ -1,0 +1,2 @@
+mapping_id,source_signal,evidence_ids,semantic_function,grammar_rule,target_constraint,translated_expression,transfer_intensity,copy_risk,rejected_source_traits,confidence,validation_needed,decision_status
+MAP-001,,,,,,,balanced,low,,medium,,hypothesis

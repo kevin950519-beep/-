@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.1.0",
+  "artifact_type": "brand_transfer_input",
+  "status": "draft",
+  "recorded_at": "",
+  "source_analysis": {
+    "reference_brand": "",
+    "package_path": "",
+    "json_path": "outputs/source-brand-analysis.json",
+    "review_path": "stage-review.json",
+    "review_status": ""
+  },
+  "product": {
+    "working_name": "",
+    "category": "",
+    "product_mode": "",
+    "audience": "",
+    "use_contexts": [],
+    "desired_outcome": "",
+    "known_facts": [],
+    "open_concept": true,
+    "priorities": []
+  },
+  "source_relationship": {
+    "qualities_to_apply": [],
+    "traits_to_avoid": []
+  },
+  "understood_direction": [],
+  "lineup_mode": "",
+  "visual_priority": "",
+  "landing_goal": "",
+  "narrative_preference": "",
+  "token_preferences": {
+    "color": "tune",
+    "typography": "tune",
+    "spacing": "tune",
+    "layout": "tune",
+    "shape": "new",
+    "motion": "new"
+  },
+  "assumptions": [],
+  "user_response_excerpts": []
+}

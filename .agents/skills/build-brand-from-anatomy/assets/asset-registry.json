@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.1.0",
+  "artifact_type": "brand_asset_registry",
+  "stage": "extended_brand_anatomy",
+  "assets": [
+    {
+      "asset_id": "ST2-PRODUCT-HERO-01",
+      "role": "representative_product_hero",
+      "communication_job": "",
+      "file_path": "",
+      "prompt_path": "",
+      "subject": "",
+      "aspect_ratio": "",
+      "generation_provenance": "",
+      "reference_lineage": [],
+      "invariants": [],
+      "allowed_variation": "",
+      "invariant_check": "pending",
+      "status": "pending"
+    },
+    {
+      "asset_id": "ST2-BRAND-MOOD-01",
+      "role": "brand_mood",
+      "communication_job": "",
+      "file_path": "",
+      "prompt_path": "",
+      "subject": "",
+      "aspect_ratio": "",
+      "generation_provenance": "",
+      "reference_lineage": [],
+      "invariants": [],
+      "allowed_variation": "",
+      "invariant_check": "pending",
+      "status": "pending"
+    }
+  ]
+}

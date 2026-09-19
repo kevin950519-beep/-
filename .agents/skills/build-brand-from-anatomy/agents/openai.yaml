@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Brand from Anatomy"
+  short_description: "Extended brand anatomy, lineup, and anchor images"
+  default_prompt: "Use $build-brand-from-anatomy with my accepted source anatomy to create the target brand as a Storybook+JSON report, explicit product lineup, one product hero, and one brand-mood image, then stop for my adjustment review."

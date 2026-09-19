@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.1.0",
+  "artifact_type": "extended_brand_anatomy",
+  "generated_at": "",
+  "source_analysis": {
+    "brand": "",
+    "package_path": "",
+    "json_path": "outputs/source-brand-analysis.json"
+  },
+  "target": {
+    "working_name": "",
+    "category": "",
+    "product_mode": "",
+    "audience": "",
+    "use_contexts": [],
+    "direction_status": "directional"
+  },
+  "sections": {
+    "source_grammar_application": {
+      "key_insight": "",
+      "summary": "",
+      "decisions": []
+    },
+    "brand_positioning": {
+      "key_insight": "",
+      "category_frame": "",
+      "audience": "",
+      "user_outcome": "",
+      "positioning_statement": "",
+      "promise": "",
+      "proof": []
+    },
+    "landing_product_concept": {
+      "key_insight": "",
+      "one_line_definition": "",
+      "user_and_use_situation": "",
+      "core_value": "",
+      "lineup_mode": "",
+      "landing_features": [],
+      "product_family": {
+        "working_name": "",
+        "promise": "",
+        "shared_architecture": "",
+        "shared_invariants": [],
+        "cognitive_invariants": [],
+        "differentiation_logic": "",
+        "status": "directional"
+      },
+      "product_lineup": [],
+      "hero_product": "",
+      "necessary_variants": [],
+      "form_cues": {
+        "shared": [],
+        "physical": [],
+        "digital": [],
+        "hybrid": []
+      },
+      "proof_image_roles": []
+    },
+    "verbal_branding_and_copy_hierarchy": {
+      "key_insight": "",
+      "brand_purpose": "",
+      "brand_essence": "",
+      "brand_message": "",
+      "brand_values": [],
+      "family_usp": "",
+      "product_usps": [],
+      "voice": [],
+      "vocabulary": [],
+      "sentence_behavior": [],
+      "message_hierarchy": [],
+      "headline_direction": [],
+      "supporting_copy_direction": [],
+      "cta_direction": [],
+      "narrative_routes": [],
+      "selected_narrative_route": "",
+      "message_visual_map": {
+        "brand_message_to_key_visual": "",
+        "brand_values_to_brand_mood": [],
+        "family_and_product_usp_to_product_imagery": []
+      },
+      "avoid": []
+    },
+    "visual_branding_and_key_visual": {
+      "key_insight": "",
+      "identity_behavior": [],
+      "communication_job": "",
+      "premise": "",
+      "series_rule": "",
+      "focal_actor": "",
+      "type_message_image_product_ui_relationship": [],
+      "repeatable_variables": [],
+      "avoid": []
+    },
+    "brand_mood_and_brand_imagery": {
+      "key_insight": "",
+      "communication_job": "",
+      "emotional_and_cultural_register": [],
+      "world_setting_people": [],
+      "materials_and_sensory_cues": [],
+      "camera_light_color": [],
+      "image_series_roles": [],
+      "avoid": []
+    },
+    "product_visual_traits_and_product_imagery": {
+      "key_insight": "",
+      "communication_job": "",
+      "product_visual_traits": {
+        "silhouette_or_screen_anatomy": [],
+        "proportion_hierarchy_density": [],
+        "material_surface_or_component_character": [],
+        "controls_states_feedback_visible_in_imagery": []
+      },
+      "product_image_direction": {
+        "hero_form": [],
+        "feature_detail": [],
+        "use_interaction": [],
+        "state_proof": [],
+        "camera_light_background_crop_retouching": [],
+        "avoid": []
+      }
+    },
+    "design_token_direction": {
+      "key_insight": "",
+      "color": [],
+      "typography": [],
+      "spacing": [],
+      "layout": [],
+      "shape": [],
+      "motion": []
+    }
+  },
+  "moodboard_inputs": {
+    "copywriting": {},
+    "hierarchy": {},
+    "brand_mood_images": {},
+    "product_description": {},
+    "product_image_generation": {}
+  },
+  "boundaries": {
+    "source_traits_not_to_copy": [],
+    "assumptions": [],
+    "factual_limits": []
+  },
+  "registered_anchor_assets": []
+}

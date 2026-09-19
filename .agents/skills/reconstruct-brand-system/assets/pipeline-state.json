@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.2.0",
+  "artifact_type": "brand_pipeline_state",
+  "auto_chain": true,
+  "created_at": "",
+  "current_stage": "stage_1",
+  "status": "active",
+  "pending_user_action": "complete_stage_1",
+  "execution": {
+    "mode": "parallel_single_brand",
+    "max_workers": 3,
+    "single_writer": true,
+    "job_plan_version": "",
+    "active_wave": "",
+    "image_parallelism": {
+      "mode": "pilot_pending",
+      "max_workers": 2
+    },
+    "stage_plans": {},
+    "serial_fallback_reason": {},
+    "jobs": []
+  },
+  "stages": {
+    "stage_1": {
+      "skill": "research-brand-anatomy",
+      "package_path": "",
+      "review_file": "stage-review.json",
+      "status": "active",
+      "started_at": "",
+      "completed_at": "",
+      "next_stage": "stage_2"
+    },
+    "stage_2": {
+      "skill": "build-brand-from-anatomy",
+      "package_path": "",
+      "review_file": "stage-review.json",
+      "status": "locked",
+      "started_at": "",
+      "completed_at": "",
+      "next_stage": "stage_3"
+    },
+    "stage_3": {
+      "skill": "build-landing-materials",
+      "package_path": "",
+      "review_file": "stage-review.json",
+      "status": "locked",
+      "started_at": "",
+      "completed_at": "",
+      "next_stage": null
+    }
+  },
+  "transition_log": [],
+  "updated_at": ""
+}

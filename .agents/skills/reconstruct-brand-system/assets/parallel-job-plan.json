@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "brand_parallel_job_plan",
+  "stages": {
+    "stage_1": {
+      "lock": "source scope and ten-minute deadline",
+      "waves": [
+        {
+          "wave_id": "stage1_research",
+          "jobs": [
+            {
+              "job_id": "strategy_verbal_identity",
+              "parallel_group": "stage1_research",
+              "task": "Collect strategy, authorship, verbal-system, identity, and channel evidence without drafting the final report.",
+              "acceptance_conditions": [
+                "Return evidence records with source lineage and confidence.",
+                "List unresolved gaps explicitly.",
+                "Do not write canonical package files."
+              ]
+            },
+            {
+              "job_id": "visual_corpus",
+              "parallel_group": "stage1_research",
+              "task": "Collect key-visual, UI/content, photography, font, color, and direct visual-corpus evidence.",
+              "acceptance_conditions": [
+                "Return source URLs and local-file lineage.",
+                "Keep visual layers distinct and flag duplicates.",
+                "Do not write canonical package files."
+              ]
+            },
+            {
+              "job_id": "product_native_language",
+              "parallel_group": "stage1_research",
+              "task": "Collect physical, digital, or hybrid product-native language, behavior, state, and feedback evidence.",
+              "acceptance_conditions": [
+                "Separate observed behavior from inference.",
+                "Return evidence records and unresolved gaps.",
+                "Do not write canonical package files."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "stage_2": {
+      "lock": "target direction",
+      "waves": [
+        {
+          "wave_id": "stage2_direction_drafts",
+          "jobs": [
+            {
+              "job_id": "verbal_narrative",
+              "parallel_group": "stage2_direction_drafts",
+              "task": "Draft the target verbal hierarchy and narrative as a structured shard from the locked direction.",
+              "acceptance_conditions": [
+                "Preserve the accepted source grammar and protected boundaries.",
+                "Keep brand values and brand message above activation copy.",
+                "Do not write canonical package files."
+              ]
+            },
+            {
+              "job_id": "product_lineup",
+              "parallel_group": "stage2_direction_drafts",
+              "task": "Draft the product family, lineup roles, invariants, allowed variation, and proof-image roles.",
+              "acceptance_conditions": [
+                "Cover every locked lineup product.",
+                "Preserve shared invariants and distinguish allowed variation.",
+                "Do not write canonical package files."
+              ]
+            },
+            {
+              "job_id": "visual_tokens",
+              "parallel_group": "stage2_direction_drafts",
+              "task": "Draft visual direction, key visual, mood, imagery, and document-only token guidance.",
+              "acceptance_conditions": [
+                "Label token directions keep, tune, or new with source lineage.",
+                "Keep report fonts and colors document-only.",
+                "Do not write canonical package files."
+              ]
+            }
+          ]
+        },
+        {
+          "wave_id": "stage2_anchors",
+          "jobs": [
+            {
+              "job_id": "product_hero_anchor",
+              "parallel_group": "stage2_anchors",
+              "task": "Produce the representative-product hero candidate and its prompt provenance in the assigned work directory.",
+              "acceptance_conditions": [
+                "Preserve locked product invariants.",
+                "Return only worker-owned files and provenance.",
+                "Do not register or write canonical package files."
+              ]
+            },
+            {
+              "job_id": "brand_mood_anchor",
+              "parallel_group": "stage2_anchors",
+              "task": "Produce the brand-mood anchor candidate and its prompt provenance in the assigned work directory.",
+              "acceptance_conditions": [
+                "Preserve the locked visual grammar and allowed variation.",
+                "Return only worker-owned files and provenance.",
+                "Do not register or write canonical package files."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "stage_3": {
+      "lock": "landing shot plan",
+      "waves": [
+        {
+          "wave_id": "stage3_materials",
+          "jobs": [
+            {
+              "job_id": "landing_copy_map",
+              "parallel_group": "stage3_materials",
+              "task": "Draft landing copy and the section-to-message map from the accepted narrative and locked shot plan.",
+              "acceptance_conditions": [
+                "Cover brand message, values, family USP, and every product USP.",
+                "Do not invent performance claims.",
+                "Do not write canonical package files."
+              ]
+            },
+            {
+              "job_id": "product_render_lane_a",
+              "parallel_group": "stage3_materials",
+              "task": "Produce the assigned first product-render shard and prompt provenance.",
+              "acceptance_conditions": [
+                "Render only products assigned by the locked shot plan.",
+                "Preserve Stage 2 invariants.",
+                "Do not register or write canonical package files."
+              ]
+            },
+            {
+              "job_id": "product_render_lane_b",
+              "parallel_group": "stage3_materials",
+              "task": "Produce the assigned second product-render shard and prompt provenance.",
+              "acceptance_conditions": [
+                "Render only products assigned by the locked shot plan.",
+                "Preserve Stage 2 invariants.",
+                "Do not register or write canonical package files."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

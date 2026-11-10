@@ -17,7 +17,7 @@ const PORTRAIT_ORIGIN = '50% 40%';
  * ArtistSection (02 2.2절 "작가 소개")
  *
  * 얇은 고딕 제목 "작가 프로필" 아래에 아티스트 이름, 학력, 소속, 전시 이력, 인스타그램 링크(좌측 열)와 프로필 사진(우측 열)을 보여 주는 구간.
- * 모바일(md 미만)에서는 두 열 대신 위에서 아래로, 프로필 사진이 먼저 나오고 그 아래에 글이 이어진다. 사진과 글 묶음은 가운데에 놓고 글 자체는 왼쪽 정렬이며, 모바일은 사진(최대 17rem 폭, 웹은 280px)과 글 묶음(최대 21rem) 모두 가운데에 놓인다.
+ * 모바일(md 미만)에서는 두 열 대신 위에서 아래로, 프로필 사진이 먼저 나오고 그 아래에 글이 이어진다. 사진과 글 묶음은 가운데에 놓고 글 자체는 왼쪽 정렬이며, 모바일은 사진(최대 272px 폭, 웹은 280px)과 글 묶음(최대 336px) 모두 가운데에 놓인다.
  * 관람 안내는 VisitGuideSection이 따로 맡는다.
  *
  * Props:
@@ -62,9 +62,9 @@ export function ArtistSection({ id = 'artist', sx }) {
             pt: { xs: 4, md: 6 },
             width: { md: '92.5%' },
             ml: { md: 'auto' },
-            /** 모바일: 폭 최대 21rem의 한 칸 가운데에 사진과 글 묶음을 함께 둔다. 글 묶음은 내용 폭만큼만 차지해 가운데에 놓이고 글 자체는 왼쪽 정렬이다 */
+            /** 모바일: 폭 최대 336px의 한 칸 (글자 보정에 크기가 따라가지 않도록 rem 대신 px) 가운데에 사진과 글 묶음을 함께 둔다. 글 묶음은 내용 폭만큼만 차지해 가운데에 놓이고 글 자체는 왼쪽 정렬이다 */
             display: { xs: 'grid', md: 'flex' },
-            gridTemplateColumns: { xs: 'min(100%, 21rem)' },
+            gridTemplateColumns: { xs: 'min(100%, 336px)' },
             justifyContent: { xs: 'center' },
           } }>
             <Grid size={ { xs: 12, md: 6 } } sx={ { order: { xs: 1, md: 2 } } }>
@@ -72,7 +72,7 @@ export function ArtistSection({ id = 'artist', sx }) {
               <Box
                 sx={ {
                   width: '100%',
-                  maxWidth: { xs: '17rem', md: 280 },
+                  maxWidth: { xs: 272, md: 280 },
                   aspectRatio: `${ artist.portrait.width } / ${ artist.portrait.height }`,
                   overflow: 'hidden',
                   mx: { xs: 'auto', md: 0 },

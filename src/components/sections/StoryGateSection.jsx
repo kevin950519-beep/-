@@ -226,22 +226,22 @@ export function StoryGateSection({ isOpen = true, autoEnterDelay, onEnter, id = 
               <Typography
                 variant="h1"
                 component="h1"
-                sx={ { fontFamily: '"210 Fullmoon", serif', fontWeight: 400, textWrap: 'balance', color: '#202020', fontSize: 'clamp(2.25rem, 9vw, 5rem)' } }
+                sx={ { fontFamily: '"210 Fullmoon", serif', fontWeight: 400, textWrap: 'balance', color: '#202020', fontSize: 'clamp(1.9375rem, calc(9vw - 5px), 4.6875rem)' } }
               >
                 { storyGate.title }
               </Typography>
               <Typography
                 variant="h5"
                 component="p"
-                sx={ (t) => ({ mt: 0.5, fontFamily: t.typography.fontFamily, fontWeight: 600, color: '#202020', fontSize: 'clamp(1.25rem, 3.6vw, 2rem)' }) }
+                sx={ (t) => ({ mt: 0.5, fontFamily: t.typography.fontFamily, fontWeight: 600, color: '#202020', fontSize: 'clamp(0.9375rem, calc(3.6vw - 5px), 1.6875rem)' }) }
               >
                 { storyGate.subtitle }
               </Typography>
               <Box sx={ { mt: { xs: 5, md: 6.5 }, color: '#202020' } }>
-                <Typography component="p" sx={ { fontSize: { xs: '1.3rem', md: '1.625rem' }, fontWeight: 600, letterSpacing: '0.04em', lineHeight: 1.3 } }>
+                <Typography component="p" sx={ { fontSize: { xs: '0.9875rem', md: '1.3125rem' }, fontWeight: 600, letterSpacing: '0.04em', lineHeight: 1.3 } }>
                   { exhibitionInfo.period }
                 </Typography>
-                <Typography component="p" sx={ { mt: 0, fontSize: { xs: '1rem', md: '1.125rem' }, fontWeight: 500, lineHeight: 1.3 } }>
+                <Typography component="p" sx={ { mt: 0, fontSize: { xs: '0.6875rem', md: '0.8125rem' }, fontWeight: 500, lineHeight: 1.3 } }>
                   { exhibitionInfo.place }
                 </Typography>
               </Box>

@@ -226,14 +226,14 @@ export function StoryGateSection({ isOpen = true, autoEnterDelay, onEnter, id = 
               <Typography
                 variant="h1"
                 component="h1"
-                sx={ { fontFamily: '"210 Fullmoon", serif', fontWeight: 400, textWrap: 'balance', color: '#202020', fontSize: 'clamp(2.75rem, 9vw, 5rem)' } }
+                sx={ { fontFamily: '"210 Fullmoon", serif', fontWeight: 400, textWrap: 'balance', color: '#202020', fontSize: 'clamp(2.25rem, 9vw, 5rem)' } }
               >
                 { storyGate.title }
               </Typography>
               <Typography
                 variant="h5"
                 component="p"
-                sx={ (t) => ({ mt: 0.5, fontFamily: t.typography.fontFamily, fontWeight: 600, color: '#202020', fontSize: 'clamp(1.5rem, 3.6vw, 2rem)' }) }
+                sx={ (t) => ({ mt: 0.5, fontFamily: t.typography.fontFamily, fontWeight: 600, color: '#202020', fontSize: 'clamp(1.25rem, 3.6vw, 2rem)' }) }
               >
                 { storyGate.subtitle }
               </Typography>

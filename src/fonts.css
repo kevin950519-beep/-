@@ -1,0 +1,27 @@
+/* 210 Fullmoon: 첫 화면 전시 제목 전용 */
+@font-face {
+  font-family: '210 Fullmoon';
+  src: url('./assets/fonts/210Fullmoon-R.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  /* 기본 서체가 먼저 보였다 바뀌지 않도록 불러올 때까지 글자를 숨긴다 */
+  font-display: block;
+}
+
+/* 210 Kkoccbaram: 작가 노트 구간 전용 */
+@font-face {
+  font-family: '210 Kkoccbaram';
+  src: url('./assets/fonts/210Kkoccbaram-R.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 210 SanbitGothic 020: 섹션 카테고리 제목 전용 (작가 소개, 대표 작품, 관람 안내) */
+@font-face {
+  font-family: '210 SanbitGothic';
+  src: url('./assets/fonts/210SanbitGothic-020.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

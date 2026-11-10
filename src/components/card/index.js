@@ -7,3 +7,6 @@ export { MoodboardCard } from './MoodboardCard.jsx';
 
 // Style variant wrapper
 export { CardContainer } from './CardContainer.jsx';
+
+// 작품 카드 (작품 팝업의 내용)
+export { WorkCard } from './WorkCard.jsx';

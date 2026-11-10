@@ -1,3 +1,5 @@
+@import './fonts.css';
+
 *,
 *::before,
 *::after {
@@ -19,4 +21,11 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* 부드러운 구간 이동. 동작 줄이기 설정에서는 끈다 (03 3.3 동작 줄이기) */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }

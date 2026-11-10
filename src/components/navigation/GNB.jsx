@@ -125,8 +125,11 @@ const GNB = forwardRef(function GNB({
         </IconButton>
       </Box>
 
-      {/* Drawer Content */}
+      {/* Drawer Content: 안의 링크를 누르면 드로어를 닫는다 */}
       <Box
+        onClick={(event) => {
+          if (event.target.closest('a')) closeDrawer();
+        }}
         sx={{
           flex: 1,
           overflow: 'auto',

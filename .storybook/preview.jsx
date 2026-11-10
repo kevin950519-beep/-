@@ -2,6 +2,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import { defaultTheme } from '../src/styles/themes';
+import '../src/fonts.css';
 
 // Google Fonts 로드 (Material Symbols + 기본 폰트)
 const googleFonts = [
@@ -11,6 +12,8 @@ const googleFonts = [
   'Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200',
   // Default Theme Font
   'Outfit:wght@300;400;500;600;700;800;900',
+  // 우연한 마중: 한글 명조 (03 3.2)
+  'Noto+Serif+KR:wght@400;500',
 ];
 
 googleFonts.forEach((font) => {
@@ -66,10 +69,10 @@ const preview = {
     },
   },
   decorators: [
-    (Story) => (
+    (Story, context) => (
       <ThemeProvider theme={defaultTheme}>
         <CssBaseline />
-        <div style={{ width: '100%', paddingTop: '40px' }}>
+        <div style={{ width: '100%', paddingTop: context.parameters.layout === 'fullscreen' ? 0 : '40px' }}>
           <Story />
         </div>
       </ThemeProvider>

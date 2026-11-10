@@ -32,6 +32,7 @@ function getTranslate(direction, distance) {
  * @param {number} delay - 전환 지연 시간 (밀리초) [Optional, 기본값: 0]
  * @param {string} direction - 슬라이드 방향 ('none' | 'up' | 'down' | 'left' | 'right') [Optional, 기본값: 'none']
  * @param {number} distance - 슬라이드 이동 거리 (px) [Optional, 기본값: 24]
+ * @param {number} blur - 등장 전 블러 크기 (px). 0이면 블러 없이 페이드만 [Optional, 기본값: 0]
  * @param {boolean} isTriggerOnView - 뷰포트 진입 시 자동 트리거 여부 [Optional, 기본값: false]
  * @param {number} threshold - IntersectionObserver 감지 비율 (0~1) [Optional, 기본값: 0.1]
  * @param {string} easing - CSS 이징 함수 [Optional, 기본값: 'cubic-bezier(0.4, 0, 0.2, 1)']
@@ -48,6 +49,7 @@ function FadeTransition({
   delay = 0,
   direction = 'none',
   distance = 24,
+  blur = 0,
   isTriggerOnView = false,
   threshold = 0.1,
   easing = 'cubic-bezier(0.4, 0, 0.2, 1)',
@@ -92,12 +94,14 @@ function FadeTransition({
       sx={ {
         opacity: isActive ? 1 : 0,
         transform,
-        transition: `opacity ${duration}ms ${easing} ${delay}ms, transform ${duration}ms ${easing} ${delay}ms`,
-        willChange: 'opacity, transform',
+        ...(blur > 0 && { filter: isActive ? 'blur(0px)' : `blur(${blur}px)` }),
+        transition: `opacity ${duration}ms ${easing} ${delay}ms, transform ${duration}ms ${easing} ${delay}ms, filter ${duration}ms ${easing} ${delay}ms`,
+        willChange: 'opacity, transform, filter',
         '@media (prefers-reduced-motion: reduce)': {
           transition: 'none',
           opacity: 1,
           transform: 'none',
+          filter: 'none',
         },
         ...sx,
       } }

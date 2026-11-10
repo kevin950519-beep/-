@@ -19,3 +19,6 @@ export { Indicator } from '../../common/ui/Indicator.jsx';
 
 // CarouselIndicator - 레거시 호환용 (Indicator 사용 권장)
 export { CarouselIndicator } from './CarouselIndicator.jsx';
+
+// BranchSilhouette - 작품(사과와 가지) 단색 실루엣, 드러남·일렁임·옅어짐
+export { BranchSilhouette } from './BranchSilhouette.jsx';

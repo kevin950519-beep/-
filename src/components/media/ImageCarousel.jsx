@@ -28,6 +28,9 @@ import { Indicator } from '../../common/ui/Indicator';
  * @param {boolean} hasIndicator - 인디케이터 표시 [Optional, 기본값: true]
  * @param {string} indicatorType - 인디케이터 타입 [Optional, 기본값: 'dot']
  * @param {string} indicatorPosition - 인디케이터 위치 [Optional, 기본값: 'bottom']
+ * @param {string} indicatorSize - 인디케이터 크기 ('sm' | 'md' | 'lg', 점 기준 6 / 8 / 10px) [Optional, 기본값: 'md']
+ * @param {string} indicatorActiveColor - 인디케이터 활성 색상 [Optional, 기본값: 'common.white']
+ * @param {string} indicatorInactiveColor - 인디케이터 비활성 색상 [Optional, 기본값: 'rgba(255,255,255,0.5)']
  * @param {boolean} hasArrows - 화살표 버튼 표시 [Optional, 기본값: true]
  * @param {boolean} isPausedOnHover - 호버 시 자동 재생 일시 정지 [Optional, 기본값: true]
  * @param {function} onSlideChange - 슬라이드 변경 콜백 (index) => void [Optional]
@@ -54,6 +57,9 @@ export function ImageCarousel({
   hasIndicator = true,
   indicatorType = 'dot',
   indicatorPosition = 'bottom',
+  indicatorSize = 'md',
+  indicatorActiveColor = 'common.white',
+  indicatorInactiveColor = 'rgba(255,255,255,0.5)',
   hasArrows = true,
   isPausedOnHover = true,
   onSlideChange,
@@ -192,6 +198,10 @@ export function ImageCarousel({
   const handleTouchStart = (e) => handleDragStart(e.touches[0].clientX);
   const handleTouchMove = (e) => handleDragMove(e.touches[0].clientX);
   const handleTouchEnd = () => handleDragEnd();
+  const handleTouchCancel = () => {
+    setIsDragging(false);
+    setDragOffset(0);
+  };
 
   /**
    * 인디케이터 위치 스타일
@@ -246,6 +256,7 @@ export function ImageCarousel({
         outline: 'none',
         cursor: isDragging ? 'grabbing' : 'grab',
         userSelect: 'none',
+        touchAction: 'pan-y',
         ...sx,
       } }
       { ...props }
@@ -259,6 +270,7 @@ export function ImageCarousel({
         onTouchStart={ handleTouchStart }
         onTouchMove={ handleTouchMove }
         onTouchEnd={ handleTouchEnd }
+        onTouchCancel={ handleTouchCancel }
         sx={ {
           display: transition === 'fade' ? 'block' : 'flex',
           width: transition === 'fade' ? '100%' : `${totalImages * 100}%`,
@@ -344,9 +356,10 @@ export function ImageCarousel({
             total={ totalImages }
             current={ currentIndex }
             variant={ indicatorType }
+            size={ indicatorSize }
             direction={ indicatorPosition === 'left' || indicatorPosition === 'right' ? 'vertical' : 'horizontal' }
-            activeColor="common.white"
-            inactiveColor="rgba(255,255,255,0.5)"
+            activeColor={ indicatorActiveColor }
+            inactiveColor={ indicatorInactiveColor }
             onClick={ goToIndex }
           />
         </Box>

@@ -33,12 +33,14 @@ Vibe Dictionary 텍소노미 v0.4 기반 분류. 번호는 텍소노미 카테�
 - CustomCard: 미디어+콘텐츠 카드. vertical/horizontal/overlay 레이아웃 (`components/card/CustomCard.jsx`)
 - ImageCard: 이미지 카드 (`components/card/ImageCard.jsx`)
 - MoodboardCard: 무드보드 컬렉션 카드. 2x2 썸네일 그리드 (`components/card/MoodboardCard.jsx`)
+- WorkCard: 작품 흰 카드. 데스크톱 왼쪽 사진·오른쪽 정보, 사진 여백 10px, 카드 폭이 사진 폭을 따라감, 설명은 왼쪽 아래 정렬, 사진 하단과 맞춤, 좁은 화면은 사진 위 (`components/card/WorkCard.jsx`)
 - Card: MUI Card 컴포넌트 [MUI]
 
 ## 4. Media — 이미지, 비디오 표시
 
 - AspectMedia: 비율 기반 미디어 컨테이너 (`components/media/AspectMedia.jsx`)
 - ImageCarousel: 이미지 캐로셀 (`components/media/ImageCarousel.jsx`)
+- BranchSilhouette: 알파 PNG 마스크 + theme 색으로 그리는 가지 실루엣. blur와 낮은 opacity로 안개처럼, 안개에서 떠오름, 한 번 일렁임(isSwaying), 늦게 옅어짐(isFading). 동작 줄이기 시 정지 (`components/media/BranchSilhouette.jsx`)
 - ImageTransition: 이미지 트랜지션 효과 (`components/media/ImageTransition.jsx`)
 - CarouselIndicator: 캐로셀 인디케이터 (`components/media/CarouselIndicator.jsx`)
 
@@ -78,11 +80,19 @@ Vibe Dictionary 텍소노미 v0.4 기반 분류. 번호는 텍소노미 카테�
 ## 9. Overlay & Feedback — 맥락적 정보 표시
 
 - Dialog: MUI Dialog 컴포넌트 [MUI]
+- WorkDetailView: 작품 단일 개별 페이지(모바일, 위 사진 가로 폭 가득, 아래 정보의 WorkCard stack 배치, 뒤로 가기) (`components/overlay-feedback/WorkDetailView.jsx`)
+- WorkLightbox: 작품 흰 카드 팝업(WorkCard 사용), 이전·다음 이동. Dialog 기반 (`components/overlay-feedback/WorkLightbox.jsx`)
 
 ## 10. Navigation (Global) — 페이지 간 이동
 
-- GNB: 반응형 글로벌 네비게이션 바. 데스크탑 메뉴 / 모바일 Drawer (`components/navigation/GNB.jsx`)
+- GNB: 반응형 글로벌 네비게이션 바. 데스크탑 메뉴 / 모바일 Drawer, 드로어 안의 링크를 누르면 닫힘 (`components/navigation/GNB.jsx`)
 - NavMenu: 네비게이션 메뉴 (`components/navigation/NavMenu.jsx`)
+- useScrollSpy: 지금 읽는 구간 id를 돌려주는 훅 (`components/navigation/useScrollSpy.js`)
+- useScrollProgress: 문서 끝까지의 스크롤 진행 0 - 1을 돌려주는 훅 (`components/navigation/useScrollProgress.js`)
+- useHeaderVisibility: 맨 위에서는 보이고 내리면 숨고 올리면 나타나는 헤더 표시 훅 (`components/navigation/useHeaderVisibility.js`)
+- useScrollLockOnce: 요소가 처음 보이면 화면 가운데로 맞추고 정해진 시간 동안 스크롤을 멈추는 훅 (`components/scroll/useScrollLockOnce.js`)
+- useStatusDock: 전시 상태 상자가 옆에 떠 있는지, 헤더에 붙었는지 여러 구간이 함께 보는 훅 (`components/navigation/useStatusDock.js`)
+- useWorkRoute: 작품 개별 페이지 주소(`#/works/{id}`)를 읽고 여닫는 훅 (`components/navigation/useWorkRoute.js`)
 - SlidingHighlightMenu: 슬라이딩 하이라이트 메뉴. hover 시 layoutId 기반 인디케이터 이동, background/underline, horizontal/vertical (`components/navigation/SlidingHighlightMenu.jsx`)
 
 ## 11. KineticTypography (Interactive) — 텍스트 애니메이션 효과
@@ -102,12 +112,13 @@ Vibe Dictionary 텍소노미 v0.4 기반 분류. 번호는 텍소노미 카테�
 
 ## 14. Motion (Interactive) — 스토리텔링 모션
 
-- FadeTransition: 기본 opacity 전환 애니메이션. 등장/퇴장 페이드 + 방향 슬라이드, IntersectionObserver 자동 트리거 (`components/motion/FadeTransition.jsx`)
+- FadeTransition: 기본 opacity 전환 애니메이션. 등장/퇴장 페이드 + 방향 슬라이드, 선택적 블러(blur), IntersectionObserver 자동 트리거 (`components/motion/FadeTransition.jsx`)
 - PerspectiveTransition: 3D 원근 회전 전환. 뒤로 누워있다가 세워지는 효과, CSS perspective + rotateX, IntersectionObserver 자동 트리거 (`components/motion/PerspectiveTransition.jsx`)
 - MarqueeContainer: 무한 루프 수평 흐름 컨테이너. CSS keyframes 기반 (`components/motion/MarqueeContainer.jsx`)
 
 ## 15. DynamicColor (Interactive) — 동적 색상 변화
 
+- FlowingColorField: 부모를 채우는 몽환적 흰 안개 배경. 옅은 바탕 위에 흰 덩어리 8개와, 가로로 길고 비스듬한 색 띠 3개(tintColors)가 서로 이어진 하나의 흐름(flow)처럼 천천히 흘러감. CSS만 사용, 동작 줄이기 시 정지. isParting을 켜면 덩어리가 바깥으로 밀려 나가며 안개가 걷힘 (`components/dynamic-color/FlowingColorField.jsx`)
 - GradientOverlay: Three.js WebGL 스크롤 반응형 그라데이션 배경. Simplex Noise + 필름 그레인 (`components/dynamic-color/GradientOverlay.jsx`)
 - GradientOverlayDynamic: Next.js 동적 import 래퍼 (ssr: false). 페이지에서 사용 시 이것을 import (`components/dynamic-color/GradientOverlayDynamic.jsx`)
 
@@ -117,5 +128,6 @@ Vibe Dictionary 텍소노미 v0.4 기반 분류. 번호는 텍소노미 카테�
 
 - EditorialDocument: 기획 문서(md 원문)를 프로젝트 테마로 브랜드 북처럼 그리는 스토리북 전용 렌더러. 제목 번호 라벨화, 가로 괘선 표, 넉넉한 여백 (`components/storybookDocumentation/EditorialDocument.jsx`)
 - Indicator: 범용 인디케이터 (`common/ui/Indicator.jsx`)
+- InstagramIcon: 선 굵기를 조절하는 인스타그램 선 아이콘 (`common/ui/InstagramIcon.jsx`)
 - Placeholder: 스토리 예제용 FPO 플레이스홀더 시스템. Box/Image/Media/Text/Line/Paragraph/Card 서브컴포넌트 (`common/ui/Placeholder.jsx`)
 - FilterBar: 필터 바 (`components/templates/FilterBar.jsx`)

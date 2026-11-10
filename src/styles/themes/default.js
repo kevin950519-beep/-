@@ -4,35 +4,56 @@
  * 프로젝트의 기본 디자인 토큰을 정의하는 표준 테마입니다.
  * 피그마의 Design Tokens / Variables와 동일한 역할입니다.
  *
- * ## 핵심 철학
- * - **Sharp Corners**: borderRadius 0 (날카로운 모서리)
- * - **Dimmed Shadow**: offset 없이 blur만 사용하는 은은한 그림자
- * - **Pure White**: 깔끔한 흰색 배경
- * - **Brand Blue**: Primary 색상 #0000FF
+ * ## 핵심 철학 (우연한 마중)
+ * - **Sharp Corners**: borderRadius 0 (03 3.3 radius)
+ * - **No Shadow**: 그림자 없음 (03 3.3 elevation)
+ * - **Gallery White / Night Charcoal**: 흰색과 차콜 두 배경 (03 3.1)
+ * - **Branch Line**: 작품 속 가지가 시각 언어. 강한 브랜드 색을 두지 않는다
  *
  * 값의 근거: docs/{project}/03-visual-direction.md 3절·5절. 상수 이름은 03 3.1 이름 열과 같게 둔다.
  */
 
 import { createTheme } from '@mui/material/styles';
-import { blueGrey, grey } from '@mui/material/colors';
+import { grey } from '@mui/material/colors';
 
 // ============================================================
 // 1. Color Tokens (색상 토큰)
 // ============================================================
+/** 03 3.1 역할 팔레트. 이름은 03 3.1 이름 열과 같다 */
+const galleryWhite = '#FFFFFF'; // 기본 배경
+const brownCharcoal = '#302D29'; // 기본 글자
+const nightCharcoal = '#151513'; // 어두운 구간 배경
+const paleSage = '#A4AE98'; // 보조 색 (작은 안내 요소에만)
+const galleryLight = '#F7F7F5'; // 어두운 구간 글자 (잠정)
+const hairline = 'rgba(48, 45, 41, 0.16)'; // 얇은 구분선 (잠정)
+/** 첫 화면 안개. 바탕은 옅은 회청색, 빛 두 색은 사과 사진의 도자 무늬에서 뽑았다 (잠정) */
+const cloudMist = '#FFFFFF'; // Cloud Mist
+const appleSky = '#9CD3EE'; // Apple Sky
+const leafGreen = '#A6E269'; // Leaf Green (첫 화면 진행 표시, 연한 연두색, 잠정)
+
 const palette = {
   mode: 'light',
+  // 첫 화면 배경 안개 전용 (03 3.1 Cloud Mist, Apple Sky)
+  mist: {
+    base: cloudMist,
+    sky: appleSky,
+  },
+  // 첫 화면 진행 표시 전용 (03 3.1 Leaf Green)
+  progress: {
+    main: leafGreen,
+  },
   // 브랜드 색상
   primary: {
-    light: '#6666FF',
-    main: '#0000FF',
-    dark: '#0000B2',
-    contrastText: '#FFFFFF',
+    light: '#5A554F',
+    main: brownCharcoal,
+    dark: '#1E1C1A',
+    contrastText: galleryWhite,
   },
   secondary: {
-    light: blueGrey[700],
-    main: blueGrey[900],
-    dark: '#1a252b',
-    contrastText: '#FFFFFF',
+    light: '#C2CAB8',
+    main: paleSage,
+    dark: '#7F8A73',
+    contrastText: brownCharcoal,
   },
 
   // 상태 색상 (Feedback)
@@ -63,19 +84,19 @@ const palette = {
 
   // 텍스트 색상
   text: {
-    primary: 'rgba(0, 0, 0, 0.87)',
-    secondary: 'rgba(0, 0, 0, 0.6)',
+    primary: brownCharcoal,
+    secondary: 'rgba(48, 45, 41, 0.64)',
     disabled: 'rgba(0, 0, 0, 0.38)',
   },
 
   // 배경 색상
   background: {
-    default: '#FFFFFF',
-    paper: '#FFFFFF',
+    default: galleryWhite,
+    paper: nightCharcoal,
   },
 
   // 구분선
-  divider: 'rgba(0, 0, 0, 0.12)',
+  divider: hairline,
 
   // 액션 상태
   action: {
@@ -90,7 +111,7 @@ const palette = {
   // Grey 스케일
   grey: {
     50: grey[50],
-    100: grey[100],
+    100: galleryLight,
     200: grey[200],
     300: grey[300],
     400: grey[400],
@@ -105,6 +126,8 @@ const palette = {
 // ============================================================
 // 2. Typography Tokens (타이포그래피 토큰)
 // ============================================================
+const serifFontFamily = '"Noto Serif KR", "Nanum Myeongjo", "Apple SD Gothic Neo", serif';
+
 const typography = {
   // 기본 폰트 패밀리
   fontFamily: [
@@ -125,6 +148,9 @@ const typography = {
     'sans-serif',
   ].join(','),
 
+  // 명조 폰트 패밀리 (03 3.2)
+  serifFontFamily,
+
   // 헤딩 폰트 패밀리
   headingFontFamily: '"Outfit", "Pretendard Variable", Pretendard, sans-serif',
 
@@ -139,26 +165,28 @@ const typography = {
   fontWeightBold: 700,
 
   // 헤딩 스타일
+  // 03 3.2 전시 제목, 작가 노트: 한글 명조
   h1: {
-    fontFamily: '"Outfit", "Pretendard Variable", Pretendard, sans-serif',
-    fontWeight: 900,
-    fontSize: '2.5rem',      // 40px
-    lineHeight: 1.2,
-    letterSpacing: '-0.02em',
+    fontFamily: serifFontFamily,
+    fontWeight: 500,
+    fontSize: 'clamp(2rem, 6vw, 3.5rem)',
+    lineHeight: 1.3,
+    letterSpacing: '0.02em',
   },
   h2: {
-    fontFamily: '"Outfit", "Pretendard Variable", Pretendard, sans-serif',
-    fontWeight: 900,
-    fontSize: '2rem',        // 32px
-    lineHeight: 1.2,
-    letterSpacing: '-0.02em',
+    fontFamily: serifFontFamily,
+    fontWeight: 400,
+    fontSize: 'clamp(1.375rem, 3.6vw, 2rem)',
+    lineHeight: 1.9,
+    letterSpacing: '0.01em',
   },
+  // 03 3.2 구간 문구: 한글 명조
   h3: {
-    fontFamily: '"Outfit", "Pretendard Variable", Pretendard, sans-serif',
-    fontWeight: 800,
-    fontSize: '1.75rem',     // 28px
-    lineHeight: 1.3,
-    letterSpacing: '-0.01em',
+    fontFamily: serifFontFamily,
+    fontWeight: 400,
+    fontSize: '1.125rem',
+    lineHeight: 1.8,
+    letterSpacing: '0.01em',
   },
   h4: {
     fontFamily: '"Outfit", "Pretendard Variable", Pretendard, sans-serif',
@@ -185,7 +213,7 @@ const typography = {
   // 본문 스타일
   body1: {
     fontSize: '1rem',        // 16px
-    lineHeight: 1.6,
+    lineHeight: 1.7,
     letterSpacing: '0',
   },
   body2: {
@@ -247,10 +275,10 @@ const shape = {
 // ============================================================
 const customShadows = {
   none: 'none',
-  sm: '0 0 12px rgba(0, 0, 0, 0.06)',
-  md: '0 0 16px rgba(0, 0, 0, 0.08)',
-  lg: '0 0 20px rgba(0, 0, 0, 0.10)',
-  xl: '0 0 24px rgba(0, 0, 0, 0.12)',
+  sm: 'none',
+  md: 'none',
+  lg: 'none',
+  xl: 'none',
 };
 
 // ============================================================
@@ -309,6 +337,9 @@ const components = {
     styleOverrides: {
       body: {
         scrollbarWidth: 'thin',
+        // 한글은 어절 단위로 줄바꿈 (03 3.2 작가 노트 가독성)
+        wordBreak: 'keep-all',
+        overflowWrap: 'break-word',
       },
     },
   },
@@ -434,6 +465,12 @@ export default defaultTheme;
 
 // 개별 토큰 내보내기 (문서화용)
 export {
+  galleryWhite,
+  brownCharcoal,
+  nightCharcoal,
+  paleSage,
+  galleryLight,
+  hairline,
   palette,
   typography,
   spacing,

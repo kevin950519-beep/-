@@ -61,6 +61,11 @@ export default {
       options: ['top', 'bottom', 'left', 'right'],
       description: '인디케이터 위치',
     },
+    indicatorSize: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+      description: '인디케이터 크기 (점 기준 6 / 8 / 10px)',
+    },
   },
 };
 
@@ -84,6 +89,7 @@ export const Default = {
     hasIndicator: true,
     indicatorType: 'dot',
     indicatorPosition: 'bottom',
+    indicatorSize: 'md',
     isLoop: true,
   },
   render: (args) => (

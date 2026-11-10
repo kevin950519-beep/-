@@ -68,7 +68,7 @@ export function ArtistNoteSection({ id = 'artist-note', sx }) {
             fontFamily: '"210 Kkoccbaram", serif',
             fontWeight: 400,
             /** 모바일: 가장 긴 둘째 줄이 한 줄에 들어가 세 줄로 보이도록 화면 폭에 맞춘다 */
-            fontSize: { xs: 'calc((100vw - 48px) / 17)', md: 'clamp(1.75rem, 6vw, 3.4375rem)' },
+            fontSize: { xs: 'calc((100vw - 48px) / 17 * var(--text-fit, 1))', md: 'clamp(1.75rem, 6vw, 3.4375rem)' },
             textAlign: 'center',
             lineHeight: 1.4,
             letterSpacing: '-0.01em',

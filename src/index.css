@@ -8,6 +8,11 @@
   padding: 0;
 }
 
+/* 환경별 글자 확대 보정: --text-fit 은 src/utils/fitTextScale.js 가 설정한다(기본 1) */
+html {
+  font-size: calc(100% * var(--text-fit, 1));
+}
+
 html,
 body,
 #root {

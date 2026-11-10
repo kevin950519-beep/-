@@ -53,7 +53,7 @@ export function ArtistStatementSection({ id = 'artist-statement', sx }) {
                 mb: { xs: 5, md: 7 },
                 fontFamily: '"210 Kkoccbaram", serif',
                 fontWeight: 400,
-                fontSize: 'clamp(1.3125rem, 5.5vw, 2.25rem)',
+                fontSize: 'clamp(1.3125rem, calc(5.5vw * var(--text-fit, 1)), 2.25rem)',
                 textAlign: 'center',
                 lineHeight: 1.5,
                 letterSpacing: '-0.01em',

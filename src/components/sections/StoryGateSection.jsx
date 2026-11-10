@@ -237,11 +237,11 @@ export function StoryGateSection({ isOpen = true, autoEnterDelay, onEnter, id = 
               >
                 { storyGate.subtitle }
               </Typography>
-              <Box sx={ { mt: { xs: 5, md: 6.5 }, color: '#202020' } }>
-                <Typography component="p" sx={ { fontSize: { xs: '0.9875rem', md: '1.3125rem' }, fontWeight: 600, letterSpacing: '0.04em', lineHeight: 1.3 } }>
+              <Box sx={ { mt: { xs: 4, md: 5.5 }, color: '#202020' } }>
+                <Typography component="p" sx={ { fontSize: { xs: '1.05rem', md: '1.375rem' }, fontWeight: 600, letterSpacing: '0.04em', lineHeight: 1.3 } }>
                   { exhibitionInfo.period }
                 </Typography>
-                <Typography component="p" sx={ { mt: 0, fontSize: { xs: '0.6875rem', md: '0.8125rem' }, fontWeight: 500, lineHeight: 1.3 } }>
+                <Typography component="p" sx={ { mt: 0, fontSize: { xs: '0.75rem', md: '0.875rem' }, fontWeight: 500, lineHeight: 1.3 } }>
                   { exhibitionInfo.place }
                 </Typography>
               </Box>

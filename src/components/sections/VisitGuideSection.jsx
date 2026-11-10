@@ -67,13 +67,13 @@ export function VisitGuideSection({ id = 'visit-guide', sx }) {
                     key={ key }
                     sx={ {
                       display: 'flex',
-                      gap: 3,
+                      gap: 2,
                       py: 1.5,
                       borderBottom: '1px solid',
                       borderColor: 'divider',
                     } }
                   >
-                    <Typography component="dt" variant="body2" color="text.secondary" sx={ { width: '6em', flexShrink: 0 } }>
+                    <Typography component="dt" variant="body2" color="text.secondary" sx={ { width: '4.5em', flexShrink: 0 } }>
                       { visitGuide.infoLabels[key] }
                     </Typography>
                     <Typography component="dd" variant="body1" sx={ { m: 0 } }>

@@ -1,4 +1,4 @@
-import posterSrc from '../../assets/임미나_포스터 시안_인쇄용01.png';
+import posterSrc from '../../assets/poster-main-web.jpg';
 import posterAltOneSrc from '../../assets/poster-01-web.jpg';
 import posterAltTwoSrc from '../../assets/poster-02-web.jpg';
 

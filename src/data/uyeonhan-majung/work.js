@@ -1,8 +1,8 @@
-import clusterSrc from '../../assets/사과들.png';
-import womanBackSrc from '../../assets/여인_뒤.png';
-import mirrorSrc from '../../assets/거울사과.png';
-import glowSrc from '../../assets/빛나는 화분.png';
-import stackSrc from '../../assets/사과셋나무하나.png';
+import clusterSrc from '../../assets/사과들-web.jpg';
+import womanBackSrc from '../../assets/여인_뒤-web.jpg';
+import mirrorSrc from '../../assets/거울사과-web.jpg';
+import glowSrc from '../../assets/빛나는 화분-web.jpg';
+import stackSrc from '../../assets/사과셋나무하나-web.jpg';
 
 /**
  * 작품 (Work). 02 3.1절 정의, 3.2절 식별자 `work`.

@@ -106,7 +106,7 @@ export function ArtistSection({ id = 'artist', sx }) {
                 >
                   { artist.name }
                 </Typography>
-                <Box component="ul" sx={ { m: 0, mb: { xs: 4, md: 5 }, p: 0, listStyle: 'none' } }>
+                <Box component="ul" sx={ { m: 0, mb: { xs: 6, md: 7 }, p: 0, listStyle: 'none' } }>
                   { artist.education.map((line) => (
                     <Typography key={ line } component="li" variant="body2" sx={ { fontWeight: 700, color: 'common.white' } }>{ line }</Typography>
                   )) }

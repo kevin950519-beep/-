@@ -21,7 +21,7 @@ import { artistStatement } from '../../data/uyeonhan-majung/artistStatement';
  */
 export function ArtistStatementSection({ id = 'artist-statement', sx }) {
   const bodySx = {
-    fontSize: { xs: '0.9375rem', md: '1.0625rem' },
+    fontSize: { xs: '0.875rem', md: '1.0625rem' },
     lineHeight: 1.95,
     wordBreak: 'keep-all',
     textWrap: 'pretty',
@@ -53,7 +53,7 @@ export function ArtistStatementSection({ id = 'artist-statement', sx }) {
                 mb: { xs: 5, md: 7 },
                 fontFamily: '"210 Kkoccbaram", serif',
                 fontWeight: 400,
-                fontSize: 'clamp(1.375rem, 5.5vw, 2.25rem)',
+                fontSize: 'clamp(1.3125rem, 5.5vw, 2.25rem)',
                 textAlign: 'center',
                 lineHeight: 1.5,
                 letterSpacing: '-0.01em',

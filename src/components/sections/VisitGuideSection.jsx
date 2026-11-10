@@ -76,7 +76,7 @@ export function VisitGuideSection({ id = 'visit-guide', sx }) {
                     <Typography component="dt" variant="body2" color="text.secondary" sx={ { width: '4.5em', flexShrink: 0 } }>
                       { visitGuide.infoLabels[key] }
                     </Typography>
-                    <Typography component="dd" variant="body1" sx={ { m: 0 } }>
+                    <Typography component="dd" variant="body1" sx={ { m: 0, whiteSpace: key === 'period' ? 'nowrap' : 'normal' } }>
                       { (key === 'period' ? exhibitionInfo.periodLabel : exhibitionInfo[key]) || visitGuide.pendingLabel }
                     </Typography>
                   </Box>

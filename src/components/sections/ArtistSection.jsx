@@ -132,7 +132,7 @@ export function ArtistSection({ id = 'artist', sx }) {
                     rel="noopener noreferrer"
                     aria-label={ `${ artist.name } 인스타그램` }
                     underline="hover"
-                    sx={ { display: 'inline-flex', alignItems: 'center', gap: 1.25, mt: 6, color: 'common.white' } }
+                    sx={ { display: 'inline-flex', alignItems: 'center', gap: 1.25, mt: 3, color: 'common.white' } }
                   >
                     <InstagramIcon sx={ { fontSize: 32 } } />
                     <Typography component="span" variant="body1" sx={ { fontSize: '1.125rem' } }>{ artist.instagram.handle }</Typography>

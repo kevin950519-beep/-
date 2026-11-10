@@ -15,7 +15,7 @@
  */
 
 /** 모든 환경에서 맞출 최종 글자 배율. 카카오톡 실측 1.37에서 낮춘 임시값 */
-const TARGET_SCALE = 1.2;
+const TARGET_SCALE = 1.15;
 
 /** 이 폭(px) 이상이면 보정하지 않는다(MUI md 기준) */
 const MAX_FIT_WIDTH = 900;

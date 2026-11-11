@@ -29,7 +29,8 @@ const HEADER_HEIGHT = { xs: 48, md: 64 };
  *
  * GNB에 구간 메뉴(읽는 위치 강조), 길찾기·인스타그램·공유 아이콘, 읽는 진행선을 묶은 헤더.
  * 모바일에서는 메뉴(햄버거와 드로어)를 두지 않고 아이콘만 두며, 헤더 높이도 낮춘다.
- * 왼쪽 위(로고 자리)는 비어 있다가, 전시 상태 상자를 X로 끌어다 놓으면 상태 칩(D-10 등)이 붙고, 칩을 누르면 다시 화면 옆으로 떠오른다.
+ * 모바일에서는 전시 상태 칩이 처음부터 왼쪽 위에 고정되어 있다(옆에 띄우는 상자 없음).
+ * 웹에서 왼쪽 위(로고 자리)는 비어 있다가, 전시 상태 상자를 X로 끌어다 놓으면 상태 칩(D-10 등)이 붙고, 칩을 누르면 다시 화면 옆으로 떠오른다.
  * 페이지 맨 위에서는 항상 보이고, 내리면 숨고 올리면 다시 나타난다. 맨 위에서는 흐름 안에 있어 히어로를 가리지 않는다.
  * 동작 줄이기 설정에서는 전환 없이 바로 바뀐다.
  *
@@ -50,7 +51,7 @@ export function HeaderSection({ isHidden = false, sx }) {
   const sectionIds = nav.items.flatMap((item) => item.sectionIds);
   const readingId = useScrollSpy(sectionIds);
   const activeId = nav.items.find((item) => item.sectionIds.includes(readingId))?.id;
-  const { isDocked, undock } = useStatusDock();
+  const { isDocked, isFixed, undock } = useStatusDock();
   const status = getStatusText(shell.status, exhibitionInfo.period);
   const progress = useScrollProgress();
   const isVisibleByScroll = useHeaderVisibility();
@@ -80,9 +81,11 @@ export function HeaderSection({ isHidden = false, sx }) {
         height={ HEADER_HEIGHT }
         logo={ isDocked ? (
           <ButtonBase
+            component={ isFixed ? 'div' : 'button' }
             onClick={ undock }
-            aria-label={ `${ status.title }, ${ status.caption }, ${ shell.statusUndockLabel }` }
-            sx={ { display: 'flex', alignItems: 'center', gap: 1, py: 0.5, borderRadius: 1, textAlign: 'left' } }
+            disableRipple={ isFixed }
+            aria-label={ isFixed ? `${ status.title }, ${ status.caption }` : `${ status.title }, ${ status.caption }, ${ shell.statusUndockLabel }` }
+            sx={ { display: 'flex', alignItems: 'center', gap: 1, py: 0.5, borderRadius: 1, textAlign: 'left', cursor: isFixed ? 'default' : 'pointer' } }
           >
             <Typography component="span" sx={ { fontSize: '1.25rem', fontWeight: 500, lineHeight: 1.2 } }>{ status.title }</Typography>
             <Typography component="span" sx={ { fontSize: '1rem', fontWeight: 300, lineHeight: 1.2, color: 'text.secondary', position: 'relative', top: '0.5px' } }>{ status.caption }</Typography>

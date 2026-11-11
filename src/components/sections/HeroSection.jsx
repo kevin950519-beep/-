@@ -41,22 +41,18 @@ const visuallyHidden = {
 export function HeroSection({ id = 'hero', sx }) {
   const { hero } = content.landing;
   const sectionRef = useRef(null);
-  const [stickyTop, setStickyTop] = useState(0);
+  const [heroHeight, setHeroHeight] = useState(0);
   const isReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
 
-  /** 히어로가 화면보다 길면 아래 끝이 화면 아래에 맞도록, 짧으면 위에 붙도록 sticky 위치를 계산한다 */
+  /** 히어로 높이만 잰다. 화면 높이는 JS로 읽지 않고 CSS의 100svh로 계산해, 모바일 주소창이 오르내려도 sticky 위치가 흔들리지 않게 한다 */
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return undefined;
-    const update = () => setStickyTop(Math.min(0, window.innerHeight - el.offsetHeight));
+    const update = () => setHeroHeight(el.offsetHeight);
     update();
     const observer = new ResizeObserver(update);
     observer.observe(el);
-    window.addEventListener('resize', update);
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('resize', update);
-    };
+    return () => observer.disconnect();
   }, []);
 
   /** 다음 구간(작가 노트)으로 이동 */
@@ -74,7 +70,8 @@ export function HeroSection({ id = 'hero', sx }) {
       id={ id }
       sx={ {
         position: isReducedMotion ? 'relative' : 'sticky',
-        top: stickyTop,
+        /** 히어로가 화면보다 길면 아래 끝이 화면 아래에 맞도록, 짧으면 위에 붙도록 */
+        top: `min(0px, calc(100svh - ${ heroHeight }px))`,
         zIndex: 0,
         overflow: 'hidden',
         backgroundColor: 'background.default',

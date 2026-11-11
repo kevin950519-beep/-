@@ -32,8 +32,11 @@ export function LandingPage() {
       <StatusFloatSection />
       <StoryGateSection isOpen={ isIntroOpen } onEnter={ handleIntroEnter } />
       <main>
-        <HeroSection />
-        <ArtistNoteSection />
+        {/* 히어로 sticky가 작가 노트까지만 붙어 있도록 둘을 한 상자로 묶는다 */}
+        <Box sx={ { position: 'relative' } }>
+          <HeroSection />
+          <ArtistNoteSection />
+        </Box>
         <WorksSection />
         <ArtistStatementSection />
         <ArtistSection />

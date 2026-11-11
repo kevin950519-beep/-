@@ -1,6 +1,8 @@
+import { useEffect, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { ImageCarousel } from '../media/ImageCarousel';
 import { exhibitionInfo } from '../../data/uyeonhan-majung/exhibitionInfo';
@@ -26,6 +28,7 @@ const visuallyHidden = {
  * 사용자가 화살표, 점, 스와이프로 넘기며, 페이드 전환이라 한 방향으로 계속 넘겨도 처음으로 부드럽게 이어진다.
  * 별도 글자를 얹지 않고, 전시 제목은 스크린리더용 숨김 제목(h1)으로 남긴다.
  * 이미지를 자르지 않는다. 높이는 폭에 따라 정해지므로 넓은 화면에서는 한 화면보다 길다.
+ * 스크롤하면 히어로는 제자리에 머물고(sticky) 아래 구간이 위로 올라와 덮는다. 히어로가 한 화면보다 길면 아래쪽 끝이 화면 아래에 닿을 때까지 먼저 내려간 뒤 붙는다. 움직임 줄이기 설정이면 일반 스크롤이다.
  * 포스터 아래 흰 여백에 문구 없이 작은 화살표 하나를 두고, 누르면 다음 구간으로 부드럽게 내려간다(움직임 줄이기 설정이면 흔들림 없음).
  *
  * Props:
@@ -37,6 +40,24 @@ const visuallyHidden = {
  */
 export function HeroSection({ id = 'hero', sx }) {
   const { hero } = content.landing;
+  const sectionRef = useRef(null);
+  const [stickyTop, setStickyTop] = useState(0);
+  const isReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
+
+  /** 히어로가 화면보다 길면 아래 끝이 화면 아래에 맞도록, 짧으면 위에 붙도록 sticky 위치를 계산한다 */
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return undefined;
+    const update = () => setStickyTop(Math.min(0, window.innerHeight - el.offsetHeight));
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    window.addEventListener('resize', update);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', update);
+    };
+  }, []);
 
   /** 다음 구간(작가 노트)으로 이동 */
   const handleScrollDown = () => {
@@ -48,10 +69,13 @@ export function HeroSection({ id = 'hero', sx }) {
 
   return (
     <Box
+      ref={ sectionRef }
       component="section"
       id={ id }
       sx={ {
-        position: 'relative',
+        position: isReducedMotion ? 'relative' : 'sticky',
+        top: stickyTop,
+        zIndex: 0,
         overflow: 'hidden',
         backgroundColor: 'background.default',
         scrollMarginTop: '64px',

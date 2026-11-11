@@ -10,7 +10,7 @@ import { copyCurrentLink } from '../../utils/copyCurrentLink';
 import { exhibitionInfo } from '../../data/uyeonhan-majung/exhibitionInfo';
 import { content } from '../../data/uyeonhan-majung/content';
 
-const INFO_KEYS = ['period', 'place', 'address', 'hours', 'fee', 'contact'];
+const INFO_KEYS = ['period', 'place', 'address', 'hours', 'contact'];
 
 /**
  * VisitGuideSection (관람 안내)

@@ -61,7 +61,7 @@ export function ArtistNoteSection({ id = 'artist-note', sx }) {
         borderTopLeftRadius: '24px',
         borderTopRightRadius: '24px',
         boxShadow: '0 -12px 16px -12px rgba(0, 0, 0, 0.1)',
-        backgroundColor: 'grey.200',
+        backgroundColor: 'background.default',
         scrollMarginTop: '64px',
         ...sx,
       } }

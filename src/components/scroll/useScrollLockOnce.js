@@ -8,7 +8,8 @@ const SCROLL_KEYS = ['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End'
  *
  * 요소가 화면에 처음 보이면 요소를 화면 가운데로 부드럽게 맞춘 뒤, 정해진 시간 동안 스크롤을 멈춘다.
  * 시간이 지나면 풀리고, 한 번만 동작한다(다시 올라와도 잠그지 않는다). 모션이 끝나기 전에 지나쳐 읽지 못하는 것을 막는 용도다.
- * 마우스 휠, 터치 스크롤, 스크롤 키를 막고, 관성으로 밀려도 잠근 위치로 되돌린다.
+ * 마우스 휠, 터치 스크롤, 스크롤 키를 막고, 도착한 뒤에는 문서 스크롤 자체를 잠가(overflow hidden) 관성이 남아도 위치가 움직이지 않게 한다.
+ * 예전에는 밀려난 위치를 scrollTo로 되돌렸는데, 모바일 관성 스크롤과 맞부딪혀 글이 위아래로 흔들려 이 방식으로 바꿨다.
  *
  * @param {object} options
  * @param {object} options.targetRef - 잠글 때 화면 가운데에 맞출 요소 ref [Required]
@@ -30,17 +31,27 @@ export function useScrollLockOnce({ targetRef, durationMs, isEnabled = true, thr
     const lock = () => {
       const rect = element.getBoundingClientRect();
       const lockY = Math.max(0, window.scrollY + rect.top + rect.height / 2 - window.innerHeight / 2);
-      let hasArrived = false;
+      const root = document.documentElement;
+      const previous = {
+        rootOverflow: root.style.overflow,
+        gutter: root.style.scrollbarGutter,
+      };
+      let isFrozen = false;
 
       const blockEvent = (event) => event.preventDefault();
       const blockKey = (event) => {
         if (SCROLL_KEYS.includes(event.key)) event.preventDefault();
       };
-      /** 맞춰 가는 동안은 그대로 두고, 도착한 뒤에는 관성으로 밀려도 잠근 위치로 되돌린다 */
+      /** 잠근 위치에 닿으면(또는 시간이 지나면) 문서 스크롤을 얼린다. 스크롤바 폭이 바뀌어 글이 밀리지 않게 자리를 남겨 둔다 */
+      const freeze = () => {
+        if (isFrozen) return;
+        isFrozen = true;
+        window.removeEventListener('scroll', handleScroll);
+        root.style.scrollbarGutter = 'stable';
+        root.style.overflow = 'hidden';
+      };
       const handleScroll = () => {
-        const distance = Math.abs(window.scrollY - lockY);
-        if (distance < 2) hasArrived = true;
-        if (hasArrived && distance > 1) window.scrollTo(0, lockY);
+        if (Math.abs(window.scrollY - lockY) < 2) freeze();
       };
 
       window.addEventListener('wheel', blockEvent, { passive: false });
@@ -48,12 +59,22 @@ export function useScrollLockOnce({ targetRef, durationMs, isEnabled = true, thr
       window.addEventListener('keydown', blockKey);
       window.addEventListener('scroll', handleScroll, { passive: true });
       window.scrollTo({ top: lockY, behavior: 'smooth' });
+      /** 이미 그 자리이거나 도착 신호를 못 받아도 얼리도록 한 번 더 확인한다 */
+      const freezeTimer = setTimeout(() => {
+        if (!isFrozen) {
+          window.scrollTo(0, lockY);
+          freeze();
+        }
+      }, 900);
 
       release = () => {
         window.removeEventListener('wheel', blockEvent);
         window.removeEventListener('touchmove', blockEvent);
         window.removeEventListener('keydown', blockKey);
         window.removeEventListener('scroll', handleScroll);
+        clearTimeout(freezeTimer);
+        root.style.overflow = previous.rootOverflow;
+        root.style.scrollbarGutter = previous.gutter;
         release = () => {};
       };
       timer = setTimeout(() => release(), durationMs);

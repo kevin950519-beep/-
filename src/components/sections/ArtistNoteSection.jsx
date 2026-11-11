@@ -55,12 +55,12 @@ export function ArtistNoteSection({ id = 'artist-note', sx }) {
         minHeight: { xs: 'calc(100svh - 104px)', md: 'calc(100svh - 128px)' },
         pt: { xs: 10, md: 16 },
         pb: { xs: 5, md: 8 },
-        /** 히어로 위로 올라와 덮는 구간: 위쪽 모서리를 둥글게 하고 얇은 그림자로 경계를 만든다 */
+        /** 히어로 위로 올라와 덮는 구간: 위쪽 모서리를 둥글게 하고 위쪽에만 얇은 그림자로 경계를 만든다(아래 작품 구간 쪽으로는 번지지 않게 한다) */
         position: 'relative',
         zIndex: 1,
         borderTopLeftRadius: '24px',
         borderTopRightRadius: '24px',
-        boxShadow: '0 -8px 24px rgba(0, 0, 0, 0.08)',
+        boxShadow: '0 -12px 16px -12px rgba(0, 0, 0, 0.1)',
         backgroundColor: 'grey.200',
         scrollMarginTop: '64px',
         ...sx,
